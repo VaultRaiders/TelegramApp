@@ -1,0 +1,336 @@
+{
+    "HomePage": {
+        "title": "Olá, mundo!",
+        "explore": "Explorar",
+        "ai-girlfriend": "Namorada AI",
+        "new-features": "NOVO: Peça às suas garotas para enviarem fotos"
+    },
+    "CTA": {
+        "title": "Crie a sua própria Namorada AI"
+    },
+    "RecentChat": {
+        "title": "Conversas Recentes"
+    },
+    "YourGirlfriends": {
+        "title": "As Suas Namoradas"
+    },
+    "Listing": {
+        "": "Todos",
+        "dominant": "Dominante",
+        "lover": "Amante",
+        "submissive": "Submissa",
+        "nympho": "Ninfa",
+        "mean": "Maldosa",
+        "confidant": "Confidente",
+        "stranger": "Estranha",
+        "school-mate": "Colega de Escola",
+        "colleague": "Colega de Trabalho",
+        "girlfriend": "Namorada",
+        "wife": "Esposa",
+        "ex-wife": "Ex-Esposa",
+        "step-sister": "Meia-Irmã",
+        "fictional": "Ficcional",
+        "sci-fi": "Ficção Científica",
+        "fantasy": "Fantasia",
+        "romantic": "Romântica",
+        "more": "Carregar Mais"
+    },
+    "CTA1": {
+        "title": "Ainda não encontrou a sua namorada ideal?",
+        "action": "Crie a sua própria Namorada AI"
+    },
+    "FAQ": {
+        "title": "Perguntas Frequentes",
+        "subtitle": "FAQ"
+    },
+    "Footer": {
+        "description": "O chatbot de romance mais avançado com quem já conversou.",
+        "tos": "Termos de Serviço",
+        "privacy-policy": "Política de Privacidade",
+        "affiliate-policy": "Política de Afiliados"
+    },
+    "ListTemplate": {
+        "your-idea": "Partilhe as suas ideias e nós tornaremos a sua namorada de fantasia perfeita realidade.",
+        "create-now": "Crie agora ✨",
+        "clone-model": "Ou clone um modelo",
+        "choose-model": "Escolha um modelo",
+        "write-idea-placeholder": "Qual o seu maior desejo ?"
+    },
+    "MyBalance": {
+        "premium": "Premium",
+        "free": "Gratuito"
+    },
+    "ButtonAccount": {
+        "my-account": "A Minha Conta",
+        "logout": "Sair"
+    },
+    "SideBar": {
+        "signup": "Registar",
+        "login": "Entrar",
+        "discover": "Descobrir",
+        "my-gf": "As Minhas Namoradas",
+        "create": "Criar"
+    },
+    "ListConversation": {
+        "recent": "Conversas Recentes"
+    },
+    "MyGirlfriend": {
+        "my-gf": "As Minhas Namoradas",
+        "create": "Criar Namorada",
+        "more": "Carregar Mais"
+    },
+    "RegisterCallback": {
+        "create": "A criar a sua namorada!",
+        "creating": "A criar a sua namorada!"
+    },
+    "ChoiceTemplate": {
+        "welcome": "Bem-Vindo A Bordo!",
+        "subtitle": "Comece por criar a sua Namorada AI"
+    },
+    "FormCreateBot": {
+        "create": "Crie a sua própria Namorada AI!",
+        "scenario": "Cenário",
+        "information": "Informação",
+        "appearance": "Aparência",
+        "customize": "Personalizar Avatar",
+        "personalization": "Personalização",
+        "choose-skill": "Escolha habilidades",
+        "age": "Idade"
+    },
+    "StepScenario": {
+        "scenario-required": "Cenário é obrigatório",
+        "introduction-require": "Introdução é obrigatória",
+        "title": "Cenário",
+        "scenario": "Cenário",
+        "next": "Próximo"
+    },
+    "StepIntro": {
+        "greeting-required": "Saudação é obrigatória",
+        "characteristics-required": "Características são obrigatórias",
+        "title": "Características",
+        "characteristics": "Características",
+        "characteristics-placeholder": "Características. Pressione Enter para adicionar",
+        "back": "Voltar",
+        "next": "Próximo"
+    },
+    "StepInfo": {
+        "name-required": "Nome é obrigatório",
+        "age-required": "Idade é obrigatória",
+        "age-18": "Idade deve ser 18 anos ou mais",
+        "title": "Aparência",
+        "name": "Nome",
+        "age": "Idade",
+        "her-look": "A aparência dela",
+        "upload": "Carregar",
+        "customize": "Personalizar",
+        "custom-avatar": "Avatar personalizado",
+        "can-send-photo": "Pode enviar foto",
+        "cant-send-photo": "Não pode enviar foto",
+        "back": "Voltar",
+        "save": "Guardar perfil dela",
+        "personalization": "Personalização",
+        "choose-skill": "Escolha habilidades",
+        "sucking": "Sucção",
+        "spanking": "Palmada",
+        "anal": "Anal",
+        "feet": "pés"
+    },
+    "FormAvatarBuilder": {
+        "title": "Aparência",
+        "defaults": {
+            "style": "Realista",
+            "ethnicity": "Caucasiana",
+            "eyesColor": "Castanhos",
+            "hairStyle": "Longo e liso",
+            "hairColor": "Preto",
+            "body": "Curvilínea",
+            "breastSize": "Grande",
+            "outfit": "Desportivo"
+        },
+        "fields": {
+            "style": "ESTILO",
+            "ethnicity": "ETNIA",
+            "hairColor": "COR DO CABELO",
+            "hairStyle": "ESTILO DO CABELO",
+            "eyesColor": "COR DOS OLHOS",
+            "body": "CORPO",
+            "breastSize": "TAMANHO DO PEITO",
+            "outfit": "ROUPA"
+        },
+        "options": {
+            "style": {
+                "realistic": "Realista",
+                "anime": "Anime"
+            },
+            "ethnicity": {
+                "asian": "Asiática",
+                "caucasian": "Caucasiana",
+                "african": "Africana",
+                "latina": "Latina",
+                "middleEastern": "Médio Oriente",
+                "nativeAmerican": "Nativa Americana",
+                "pacificIslander": "Ilhas do Pacífico",
+                "mixed": "Mista"
+            },
+            "eyesColor": {
+                "brown": "Castanhos",
+                "green": "Verdes",
+                "darkBrown": "Castanho Escuro",
+                "blue": "Azuis",
+                "hazel": "Avelã",
+                "black": "Negros",
+                "amber": "Âmbar",
+                "gray": "Cinzento",
+                "lightBrown": "Castanho Claro"
+            },
+            "hairColor": {
+                "black": "Preto",
+                "darkBrown": "Castanho Escuro",
+                "blonde": "Loiro",
+                "red": "Ruivo",
+                "silver": "Prateado",
+                "platinumBlonde": "Loiro Platinado",
+                "chestnutBrown": "Castanho Avermelhado"
+            },
+            "hairStyle": {
+                "longStraight": "Longo e liso",
+                "curlyVoluminous": "Encaracolado e volumoso",
+                "shortNatural": "Curto e natural",
+                "wavyShoulder": "Ondulado e pelos ombros",
+                "longBraided": "Longo e entrançado",
+                "mediumWavy": "Médio e ondulado",
+                "pixieCut": "Corte pixie",
+                "tousledShort": "Desarrumado e curto",
+                "highPonytail": "Rabo de cavalo alto",
+                "bobCut": "Corte bob",
+                "messyBun": "Coque desalinhado",
+                "braided": "Entrançado",
+                "curlyShort": "Curto e encaracolado",
+                "longWavy": "Longo e ondulado"
+            },
+            "body": {
+                "slim": "Magra",
+                "athletic": "Atlética",
+                "curvy": "Curvilínea",
+                "plusSize": "Tamanho grande",
+                "petite": "Pequena",
+                "muscular": "Musculada",
+                "average": "Média",
+                "hourglass": "Ampulheta"
+            },
+            "breastSize": {
+                "small": "Pequeno",
+                "medium": "Médio",
+                "large": "Grande",
+                "extraLarge": "Extra Grande"
+            },
+            "outfit": {
+                "casual": "Casual",
+                "formal": "Formal",
+                "sporty": "Desportivo",
+                "trendy": "Na Moda",
+                "bohemian": "Boémio",
+                "business": "Executivo",
+                "chic": "Chique",
+                "streetwear": "Roupa de Rua"
+            }
+        },
+        "back": "Voltar",
+        "buttons": {
+            "saveProfile": "Guardar"
+        },
+        "prompts": {
+            "ethnicity": "Etnia"
+        },
+        "style": "ESTILO",
+        "ethnicity": "ETNIA",
+        "hair-color": "COR DO CABELO",
+        "hair-style": "ESTILO DO CABELO",
+        "eyes-color": "COR DOS OLHOS",
+        "body": "CORPO",
+        "breast-size": "TAMANHO DO PEITO",
+        "outfit": "ROUPA",
+        "next": "Próximo"
+    },
+    "Chat": {
+        "photo-gen": "Geração de Foto",
+        "by-community": "Pela Comunidade",
+        "by-ivysoulmate": "Por Ivy Soulmate",
+        "ivy-choice": "Escolha da Ivy",
+        "cta": "Desfrute de chat e fotos ilimitados com",
+        "premium": "Premium",
+        "unlock-instance": "Desbloquear Respostas Instantâneas Agora",
+        "busy-right-now": "está ocupada no momento, responderá em",
+        "or-you-can": "Ou pode",
+        "view-photo-now": "Ver foto agora",
+        "subscribe-now": "⭐ Subscrever agora"
+    },
+    "UserProfile": {
+        "share": "Partilhar",
+        "new-chat": "Novo Chat",
+        "messages": "mensagens"
+    },
+    "Me": {
+        "account": "Conta",
+        "welcome": "Olá",
+        "your-plan": "O seu plano",
+        "premium": "Premium",
+        "free": "Gratuito",
+        "unlock": "Desbloquear todas as funcionalidades",
+        "subscription": "Subscrição",
+        "patreon-email": "Email do Patreon",
+        "logout": "Sair"
+    },
+    "Topup": {
+        "why-wait": "Porque esperar?",
+        "upgrade-now": "Atualize para Premium agora",
+        "instait-now": "para torná-la exclusivamente sua e obter respostas instantâneas",
+        "no-delay": "Sem demoras, apenas conexão e amor!",
+        "up-to-disscount": "Desconto até 75%",
+        "hours": "horas",
+        "min": "min",
+        "sec": "seg",
+        "week": "semana",
+        "day": "dia",
+        "upgrade-to-unlock": "Atualize para Desbloquear",
+        "unlimited-custom-girlfriends": "Namoradas personalizadas ilimitadas",
+        "unlimited-messages": "Mensagens ilimitadas",
+        "unlimited-photos": "Fotos ilimitadas",
+        "remove-all-ads": "Remover todos os anúncios",
+        "nsfw-mode": "Modo NSFW sem filtro e Erótico"
+    },
+    "Landing12": {
+        "welcome": "Bem-vindo à IVY",
+        "title": "CRIE A SUA NAMORADA AI",
+        "create-now": "Crie Agora"
+    },
+    "Telegram": {
+        "ListBot": {
+            "welcome": "Bem-vindo ao IVY",
+            "title": "ESCOLHA UMA NAMORADA AI",
+            "chat-now": "Conversar agora",
+            "bot-bio": "Bio",
+            "choose-one": "Escolha uma",
+            "or": "OU",
+            "create-your-own": "Crie sua própria namorada",
+            "starting-chat": "Iniciando bate-papo"
+        },
+        "List12": {
+            "welcome": "Bem-vindo ao IVY",
+            "title": "CRIE SUA NAMORADA AI",
+            "create-now": "Criar agora"
+        },
+        "Create": {
+            "Templates": {
+                "write-idea-placeholder": "Qual é o seu sonho mais selvagem?"
+            }
+        },
+        "Setting": {
+            "Numbers of all time": "Números de todos os tempos",
+            "Messages": "Mensagens",
+            "Photos": "Fotos",
+            "Settings": "Definições",
+            "Language": "Idioma"
+        }
+    }
+}

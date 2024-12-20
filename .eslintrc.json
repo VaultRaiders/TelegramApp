@@ -1,0 +1,66 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    // Your specific rules.
+    "no-restricted-imports": [
+      "warn",
+      {
+        "name": "next/link",
+        "message": "Please import from `@/i18n/routing` instead."
+      },
+      {
+        "name": "next/navigation",
+        "importNames": [
+          "redirect",
+          "useRouter",
+          "usePathname",
+          "useParams",
+          "useSearchParams"
+        ],
+        "message": "Please import from `@/i18n/routing` instead."
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "index", "sibling"]
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "react-hooks/exhaustive-deps": "off",
+    "no-unused-vars": [
+      "warn",
+      { "varsIgnorePattern": "^_|^I[A-Z]", "argsIgnorePattern": "^_" }
+    ],
+    "no-extra-boolean-cast": "off",
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+  // "includes": ["**/*.ts", "**/*.tsx"]
+}

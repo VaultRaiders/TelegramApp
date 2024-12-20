@@ -1,0 +1,359 @@
+{
+    "HomePage": {
+        "title": "Hello world!",
+        "explore": "Explore",
+        "ai-girlfriend": "AI Girlfriend",
+        "new-features": "NEW: Ask your girls to send photos"
+    },
+    "CTA": {
+        "title": "Create your own AI Girlfriend"
+    },
+    "RecentChat": {
+        "title": "Recent Chat"
+    },
+    "YourGirlfriends": {
+        "title": "Your Girlfriends"
+    },
+    "Listing": {
+        "": "All",
+        "dominant": "Dominant",
+        "lover": "Lover",
+        "submissive": "Submissive",
+        "nympho": "Nympho",
+        "mean": "Mean",
+        "confidant": "Confidant",
+        "stranger": "Stranger",
+        "school-mate": "School Mate",
+        "colleague": "Colleague",
+        "girlfriend": "Girlfriend",
+        "wife": "Wife",
+        "ex-wife": "Ex-Wife",
+        "step-sister": "Step-Sister",
+        "fictional": "Fictional",
+        "sci-fi": "Sci Fi",
+        "fantasy": "Fantasy",
+        "romantic": "Romantic",
+        "more": "Load More"
+    },
+    "CTA1": {
+        "title": "Still haven’t found your ideal girlfriend?",
+        "action": "Create your own AI Girlfriend"
+    },
+    "FAQ": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "FAQ"
+    },
+    "Footer": {
+        "description": "The most advanced romance chatbot you've ever talked to.",
+        "tos": "Terms of Service",
+        "privacy-policy": "Privacy Policy",
+        "affiliate-policy": "Affiliate Policy"
+    },
+    "ListTemplate": {
+        "your-idea": "Share your ideas, and we'll bring your perfect fantasy girlfriend to life.",
+        "create-now": "Create now ✨",
+        "clone-model": "Or clone a model",
+        "choose-model": "Choose a model",
+        "write-idea-placeholder": "What is your wildest dream?"
+    },
+    "MyBalance": {
+        "premium": "Premium",
+        "free": "Free"
+    },
+    "ButtonAccount": {
+        "my-account": "My Account",
+        "logout": "Logout"
+    },
+    "SideBar": {
+        "signup": "Sign Up",
+        "login": "Login",
+        "discover": "Discover",
+        "my-gf": "My GFs",
+        "create": "Create"
+    },
+    "ListConversation": {
+        "recent": "Recent Conversations"
+    },
+    "MyGirlfriend": {
+        "my-gf": "My Girlfriends",
+        "create": "Create Girlfriend",
+        "more": "Load More"
+    },
+    "RegisterCallback": {
+        "create": "Creating your girlfriend!",
+        "creating": "Creating your girlfriend!"
+    },
+    "ChoiceTemplate": {
+        "welcome": "Welcome Aboard!",
+        "subtitle": "Start by creating your AI Girlfriend"
+    },
+    "FormCreateBot": {
+        "create": "Create your own AI girlfriend!",
+        "scenario": "Scenario",
+        "information": "Information",
+        "appearance": "Appearance",
+        "customize": "Customize Avatar",
+        "personalization": "Personalization",
+        "choose-skill": "Choose Skills",
+        "age": "Age"
+    },
+    "StepScenario": {
+        "scenario-required": "Scenario is required",
+        "introduction-require": "Introduction is required",
+        "title": "Scenario",
+        "scenario": "Scenario",
+        "next": "Next",
+        "name-required": "Name is required",
+        "age-required": "Age is required",
+        "age-18": "Age must be 18 or older",
+        "name": "Name",
+        "age": "Age",
+        "her-look": "Her Look",
+        "upload": "Upload",
+        "customize": "Customize",
+        "custom-avatar": "Custom avatar",
+        "can-send-photo": "Can send photo",
+        "cant-send-photo": "Can't send photo",
+        "back": "Back",
+        "save": "Save her profile",
+        "personalization": "Personalization"
+    },
+    "StepIntro": {
+        "greeting-required": "Greeting is required",
+        "characteristics-required": "Characteristics is required",
+        "title": "Characteristics",
+        "characteristics": "Characteristics",
+        "characteristics-placeholder": "Characteristics. Press Enter to add",
+        "back": "Back",
+        "next": "Next"
+    },
+    "StepInfo": {
+        "name-required": "Name is required",
+        "age-required": "Age is required",
+        "age-18": "Age must be 18 or older",
+        "title": "Appearance",
+        "name": "Name",
+        "age": "Age",
+        "her-look": "Her Look",
+        "upload": "Upload",
+        "customize": "Customize",
+        "custom-avatar": "Custom avatar",
+        "can-send-photo": "Can send photo",
+        "cant-send-photo": "Can't send photo",
+        "back": "Back",
+        "save": "Save her profile",
+        "personalization": "Personalization",
+        "choose-skill": "Choose Skills",
+        "sucking": "Sucking",
+        "spanking": "Spanking",
+        "anal": "Anal",
+        "feet": "feet"
+    },
+    "FormAvatarBuilder": {
+        "title": "Appearance",
+        "defaults": {
+            "style": "Realistic",
+            "ethnicity": "Caucasian",
+            "eyesColor": "Brown",
+            "hairStyle": "Long and straight",
+            "hairColor": "Black",
+            "body": "Curvy",
+            "breastSize": "Large",
+            "outfit": "Sporty"
+        },
+        "fields": {
+            "style": "STYLE",
+            "ethnicity": "ETHNICITY",
+            "hairColor": "HAIR COLOR",
+            "hairStyle": "HAIR STYLE",
+            "eyesColor": "EYES COLOR",
+            "body": "BODY",
+            "breastSize": "BREAST SIZE",
+            "outfit": "OUTFIT"
+        },
+        "options": {
+            "style": {
+                "realistic": "Realistic",
+                "anime": "Anime"
+            },
+            "ethnicity": {
+                "asian": "Asian",
+                "caucasian": "Caucasian",
+                "african": "African",
+                "latina": "Latina",
+                "middleEastern": "Middle Eastern",
+                "nativeAmerican": "Native American",
+                "pacificIslander": "Pacific Islander",
+                "mixed": "Mixed"
+            },
+            "eyesColor": {
+                "brown": "Brown",
+                "green": "Green",
+                "darkBrown": "Dark Brown",
+                "blue": "Blue",
+                "hazel": "Hazel",
+                "black": "Black",
+                "amber": "Amber",
+                "gray": "Gray",
+                "lightBrown": "Light Brown"
+            },
+            "hairColor": {
+                "black": "Black",
+                "darkBrown": "Dark Brown",
+                "blonde": "Blonde",
+                "red": "Red",
+                "silver": "Silver",
+                "platinumBlonde": "Platinum Blonde",
+                "chestnutBrown": "Chestnut Brown"
+            },
+            "hairStyle": {
+                "longStraight": "Long and straight",
+                "curlyVoluminous": "Curly and voluminous",
+                "shortNatural": "Short and natural",
+                "wavyShoulder": "Wavy and shoulder-length",
+                "longBraided": "Long and braided",
+                "mediumWavy": "Medium and wavy",
+                "pixieCut": "Pixie cut",
+                "tousledShort": "Tousled and short",
+                "highPonytail": "High ponytail",
+                "bobCut": "Bob cut",
+                "messyBun": "Messy bun",
+                "braided": "Braided",
+                "curlyShort": "Curly and short",
+                "longWavy": "Long wavy"
+            },
+            "body": {
+                "slim": "Slim",
+                "athletic": "Athletic",
+                "curvy": "Curvy",
+                "plusSize": "Plus Size",
+                "petite": "Petite",
+                "muscular": "Muscular",
+                "average": "Average",
+                "hourglass": "Hour Glass"
+            },
+            "breastSize": {
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large",
+                "extraLarge": "Extra Large"
+            },
+            "outfit": {
+                "casual": "Casual",
+                "formal": "Formal",
+                "sporty": "Sporty",
+                "trendy": "Trendy",
+                "bohemian": "Bohemian",
+                "business": "Business",
+                "chic": "Chic",
+                "streetwear": "Streetwear"
+            }
+        },
+        "back": "Back",
+        "buttons": {
+            "saveProfile": "Save"
+        },
+        "prompts": {
+            "ethnicity": "Ethnicity"
+        },
+        "style": "STYLE",
+        "ethnicity": "ETHNICITY",
+        "hair-color": "HAIR COLOR",
+        "hair-style": "HAIR STYLE",
+        "eyes-color": "EYES COLOR",
+        "body": "BODY",
+        "breast-size": "Breast Size",
+        "outfit": "OUTFIT",
+        "next": "Next"
+    },
+    "Chat": {
+        "photo-gen": "Photo Gen",
+        "by-community": "By Community",
+        "by-ivysoulmate": "By Ivy Soulmate",
+        "ivy-choice": "Ivy's Choice",
+        "cta": "Enjoy unlimited chat and photos with",
+        "premium": "Premium",
+        "unlock-instance": "Unlock Instant Replies Now",
+        "busy-right-now": "is busy right now, she'll get back to you in",
+        "or-you-can": "Or you can",
+        "view-photo-now": "View photo now",
+        "subscribe-now": "⭐ Subscribe now"
+    },
+    "UserProfile": {
+        "share": "Share",
+        "new-chat": "New Chat",
+        "messages": "messages"
+    },
+    "Me": {
+        "account": "Account",
+        "welcome": "Hi",
+        "your-plan": "Your plan",
+        "premium": "Premium",
+        "free": "Free",
+        "unlock": "Unlock all features",
+        "subscription": "Subscription",
+        "patreon-email": "Patreon Email",
+        "logout": "Logout"
+    },
+    "Topup": {
+        "why-wait": "Why wait?",
+        "upgrade-now": "Upgrade to Premium now",
+        "instait-now": "to make her wholeheartedly yours and get instant replies from",
+        "no-delay": "No delays, just connection and love!",
+        "up-to-disscount": "Up to 75% discount",
+        "hours": "hours",
+        "min": "min",
+        "sec": "sec",
+        "week": "week",
+        "day": "day",
+        "upgrade-to-unlock": "Upgrade to Unlock",
+        "unlimited-custom-girlfriends": "Unlimited custom girlfriends",
+        "unlimited-messages": "Unlimited messages",
+        "unlimited-photos": "Unlimited photos",
+        "remove-all-ads": "Remove all ads",
+        "nsfw-mode": "Unfiltered NSFW and Erotic Mode"
+    },
+    "Landing12": {
+        "welcome": "Welcome to IVY",
+        "title": "CREATE YOUR AI GIRLFRIEND",
+        "create-now": "Create Now"
+    },
+    "Telegram": {
+        "ListBot": {
+            "welcome": "Welcome to IVY",
+            "title": "PICK AN AI GIRLFRIEND",
+            "chat-now": "Chat Now",
+            "bot-bio": "Bio",
+            "choose-one": "Choose one",
+            "or": "OR",
+            "create-your-own": "Create Your Own Girlfriend",
+            "characters": "Characters"
+        },
+        "Create": {
+            "Templates": {
+                "Create your AI girlfriend": "Create your AI girlfriend",
+                "What is your wildest dream": "What is your wildest dream?",
+                "Share your ideas, and we'll bring your perfect fantasy girlfriend to life": "Share your ideas, and we'll bring your perfect fantasy girlfriend to life.",
+                "Create now": "Create now ✨",
+                "write-idea-placeholder": "What is your wildest dream?"
+            },
+            "Custom": {
+                "create": "Create your AI girlfriend",
+                "scenario": "Scenario",
+                "information": "Information",
+                "appearance": "Appearance",
+                "customize": "Customize Avatar",
+                "personalization": "Personalization",
+                "choose-skill": "Choose Skills",
+                "age": "Age"
+            }
+        },
+        "Setting": {
+            "Numbers of all time": "Numbers of all time",
+            "Messages": "Messages",
+            "Photos": "Photos",
+            "Settings": "Settings",
+            "Language": "Language"
+        }
+    }
+}

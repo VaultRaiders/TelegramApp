@@ -1,0 +1,62 @@
+import { ReactNode, Suspense } from "react";
+
+import { Viewport } from "next";
+import { Inter } from "next/font/google";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { Toaster } from "react-hot-toast";
+
+import Loading from "@/components/common/Loading";
+import { TelegramProvider } from "@/components/telegram/layout/TelegramProvider";
+import config from "@/config";
+import { routing } from "@/i18n/routing";
+import { getSEOTags } from "@/libs/seo";
+
+import "@/app/globals.css";
+
+const font = Inter({ subsets: ["latin"] });
+
+export const viewport: Viewport = {
+  themeColor: config.colors.main,
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
+export const metadata = getSEOTags();
+
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: {
+  children: ReactNode;
+  params: { locale: string };
+}) {
+  if (!routing.locales?.includes(locale as any)) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+
+  return (
+    <html
+      lang={locale}
+      data-theme={config.colors.theme}
+      className={font.className}
+    >
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {" "}
+          <TelegramProvider>
+            <Suspense fallback={<Loading />}>
+              <Toaster position="top-center" reverseOrder={false} />
+              {children}
+            </Suspense>
+          </TelegramProvider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}

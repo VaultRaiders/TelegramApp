@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap");
+
+html,
+body {
+    scroll-behavior: smooth !important;
+}
+
+/* It makes the HTML progress bar filling smooth when value change. */
+progress::-webkit-progress-value {
+    transition: 0.6s width ease-out;
+}
+
+@layer base {
+    .btn-gradient {
+        @apply animate-shimmer !border-0 !border-transparent !bg-transparent !bg-gradient !bg-[length:300%_300%] !text-white shadow duration-100 hover:saturate-[1.2] disabled:!bg-gray-500/30 disabled:!bg-none;
+    }
+    .btn {
+        @apply !capitalize;
+    }
+
+    html {
+        font-family: "DM Sans", sans-serif;
+    }
+
+    .chat-end {
+        place-items: end;
+        grid-template-columns: 2fr auto;
+    }
+
+    .chat-start {
+        place-items: start;
+        grid-template-columns: auto 2fr;
+    }
+
+    .chat-bubble em {
+        font-style: italic;
+        color: #999;
+    }
+}
+
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+}

@@ -1,0 +1,336 @@
+{
+    "HomePage": {
+        "title": "こんにちは、世界！",
+        "explore": "探検する",
+        "ai-girlfriend": "AIガールフレンド",
+        "new-features": "新機能: 女の子に写真を送ってもらおう"
+    },
+    "CTA": {
+        "title": "自分だけのAIガールフレンドを作ろう"
+    },
+    "RecentChat": {
+        "title": "最近のチャット"
+    },
+    "YourGirlfriends": {
+        "title": "あなたのガールフレンド"
+    },
+    "Listing": {
+        "": "すべて",
+        "dominant": "支配的",
+        "lover": "恋人",
+        "submissive": "誠実",
+        "nympho": "ニンフォ",
+        "mean": "意地悪",
+        "confidant": "親友",
+        "stranger": "見知らぬ人",
+        "school-mate": "クラスメイト",
+        "colleague": "同僚",
+        "girlfriend": "ガールフレンド",
+        "wife": "妻",
+        "ex-wife": "元妻",
+        "step-sister": "義理の妹",
+        "fictional": "架空の人物",
+        "sci-fi": "SF",
+        "fantasy": "ファンタジー",
+        "romantic": "ロマンチック",
+        "more": "もっと読み込む"
+    },
+    "CTA1": {
+        "title": "理想のガールフレンドがまだ見つかっていない？",
+        "action": "自分だけのAIガールフレンドを作ろう"
+    },
+    "FAQ": {
+        "title": "よくある質問",
+        "subtitle": "FAQ"
+    },
+    "Footer": {
+        "description": "これまでにない高度なロマンスチャットボット。",
+        "tos": "利用規約",
+        "privacy-policy": "プライバシーポリシー",
+        "affiliate-policy": "アフィリエイトポリシー"
+    },
+    "ListTemplate": {
+        "your-idea": "あなたのアイデアを教えてください。完璧なファンタジーガールフレンドを作り上げます。",
+        "create-now": "今すぐ作成 ✨",
+        "clone-model": "またはモデルをクローンする",
+        "choose-model": "モデルを選ぶ",
+        "write-idea-placeholder": "あなたの最高の秘密を教えてください"
+    },
+    "MyBalance": {
+        "premium": "プレミアム",
+        "free": "無料"
+    },
+    "ButtonAccount": {
+        "my-account": "マイアカウント",
+        "logout": "ログアウト"
+    },
+    "SideBar": {
+        "signup": "サインアップ",
+        "login": "ログイン",
+        "discover": "発見",
+        "my-gf": "私の彼女たち",
+        "create": "作成"
+    },
+    "ListConversation": {
+        "recent": "最近の会話"
+    },
+    "MyGirlfriend": {
+        "my-gf": "彼女たち",
+        "create": "彼女を作成",
+        "more": "もっと読み込む"
+    },
+    "RegisterCallback": {
+        "create": "彼女を作成中です！",
+        "creating": "彼女を作成中です！"
+    },
+    "ChoiceTemplate": {
+        "welcome": "ようこそ！",
+        "subtitle": "AI彼女を作成して始めましょう"
+    },
+    "FormCreateBot": {
+        "create": "自分のAI彼女を作成しよう！",
+        "scenario": "シナリオ",
+        "information": "情報",
+        "appearance": "外見",
+        "customize": "アバターをカスタマイズ",
+        "personalization": "個人化",
+        "choose-skill": "スキルを選択",
+        "age": "年"
+    },
+    "StepScenario": {
+        "scenario-required": "シナリオは必須です",
+        "introduction-require": "紹介文は必須です",
+        "title": "シナリオ",
+        "scenario": "シナリオ",
+        "next": "次へ"
+    },
+    "StepIntro": {
+        "greeting-required": "挨拶は必須です",
+        "characteristics-required": "特徴は必須です",
+        "title": "特徴",
+        "characteristics": "特徴",
+        "characteristics-placeholder": "特徴。Enterキーで追加",
+        "back": "戻る",
+        "next": "次へ"
+    },
+    "StepInfo": {
+        "name-required": "名前は必須です",
+        "age-required": "年齢は必須です",
+        "age-18": "年齢は18歳以上である必要があります",
+        "title": "外見",
+        "name": "名前",
+        "age": "年齢",
+        "her-look": "彼女の外見",
+        "upload": "アップロード",
+        "customize": "カスタマイズ",
+        "custom-avatar": "カスタムアバター",
+        "can-send-photo": "写真を送信できる",
+        "cant-send-photo": "写真を送信できない",
+        "back": "戻る",
+        "save": "彼女のプロフィールを保存",
+        "personalization": "パーソナライゼーション",
+        "choose-skill": "スキルを選択",
+        "sucking": "吸う",
+        "spanking": "スパンキング",
+        "anal": "アナル",
+        "feet": "足"
+    },
+    "FormAvatarBuilder": {
+        "title": "外見",
+        "defaults": {
+            "style": "リアル",
+            "ethnicity": "白人",
+            "eyesColor": "茶色",
+            "hairStyle": "ロングストレート",
+            "hairColor": "黒",
+            "body": "カーヴィー",
+            "breastSize": "大きい",
+            "outfit": "スポーティ"
+        },
+        "fields": {
+            "style": "スタイル",
+            "ethnicity": "人種",
+            "hairColor": "髪の色",
+            "hairStyle": "髪型",
+            "eyesColor": "目の色",
+            "body": "体型",
+            "breastSize": "胸のサイズ",
+            "outfit": "服装"
+        },
+        "options": {
+            "style": {
+                "realistic": "リアル",
+                "anime": "アニメ"
+            },
+            "ethnicity": {
+                "asian": "アジア系",
+                "caucasian": "白人",
+                "african": "アフリカ系",
+                "latina": "ラテン系",
+                "middleEastern": "中東系",
+                "nativeAmerican": "ネイティブアメリカン",
+                "pacificIslander": "太平洋諸島系",
+                "mixed": "混血"
+            },
+            "eyesColor": {
+                "brown": "茶色",
+                "green": "緑",
+                "darkBrown": "濃い茶色",
+                "blue": "青",
+                "hazel": "ヘーゼル",
+                "black": "黒",
+                "amber": "琥珀色",
+                "gray": "灰色",
+                "lightBrown": "明るい茶色"
+            },
+            "hairColor": {
+                "black": "黒",
+                "darkBrown": "濃い茶色",
+                "blonde": "ブロンド",
+                "red": "赤",
+                "silver": "銀色",
+                "platinumBlonde": "プラチナブロンド",
+                "chestnutBrown": "栗色"
+            },
+            "hairStyle": {
+                "longStraight": "ロングストレート",
+                "curlyVoluminous": "カールでボリュームあり",
+                "shortNatural": "ショートでナチュラル",
+                "wavyShoulder": "ウェーブで肩まで",
+                "longBraided": "ロングブレイド",
+                "mediumWavy": "ミディアムウェーブ",
+                "pixieCut": "ピクシーカット",
+                "tousledShort": "乱れたショート",
+                "highPonytail": "高いポニーテール",
+                "bobCut": "ボブカット",
+                "messyBun": "乱れたお団子",
+                "braided": "ブレイド",
+                "curlyShort": "カールショート",
+                "longWavy": "ロングウェーブ"
+            },
+            "body": {
+                "slim": "スリム",
+                "athletic": "アスリート体型",
+                "curvy": "カーヴィー",
+                "plusSize": "プラスサイズ",
+                "petite": "小柄",
+                "muscular": "筋肉質",
+                "average": "普通",
+                "hourglass": "砂時計型"
+            },
+            "breastSize": {
+                "small": "小さい",
+                "medium": "中くらい",
+                "large": "大きい",
+                "extraLarge": "特大"
+            },
+            "outfit": {
+                "casual": "カジュアル",
+                "formal": "フォーマル",
+                "sporty": "スポーティ",
+                "trendy": "トレンディ",
+                "bohemian": "ボヘミアン",
+                "business": "ビジネス",
+                "chic": "シック",
+                "streetwear": "ストリートウェア"
+            }
+        },
+        "back": "戻る",
+        "buttons": {
+            "saveProfile": "保存"
+        },
+        "prompts": {
+            "ethnicity": "人種"
+        },
+        "style": "スタイル",
+        "ethnicity": "人種",
+        "hair-color": "髪の色",
+        "hair-style": "髪型",
+        "eyes-color": "目の色",
+        "body": "体型",
+        "breast-size": "胸のサイズ",
+        "outfit": "服装",
+        "next": "次"
+    },
+    "Chat": {
+        "photo-gen": "写真生成",
+        "by-community": "コミュニティ提供",
+        "by-ivysoulmate": "Ivy Soulmate提供",
+        "ivy-choice": "Ivyの選択",
+        "cta": "無制限のチャットと写真を楽しもう",
+        "premium": "プレミアム",
+        "unlock-instance": "今すぐ即時返信を解除",
+        "busy-right-now": "ただいま忙しいです、しばらくしてから返信します",
+        "or-you-can": "または",
+        "view-photo-now": "今すぐ写真を見る",
+        "subscribe-now": "⭐ 今すぐ購読"
+    },
+    "UserProfile": {
+        "share": "共有",
+        "new-chat": "新しいチャット",
+        "messages": "メッセージ"
+    },
+    "Me": {
+        "account": "アカウント",
+        "welcome": "こんにちは",
+        "your-plan": "あなたのプラン",
+        "premium": "プレミアム",
+        "free": "無料",
+        "unlock": "すべての機能を解除",
+        "subscription": "購読",
+        "patreon-email": "Patreonのメールアドレス",
+        "logout": "ログアウト"
+    },
+    "Topup": {
+        "why-wait": "なぜ待つのですか？",
+        "upgrade-now": "今すぐプレミアムにアップグレード",
+        "instait-now": "彼女を完全にあなたのものにして、即時返信を得るために",
+        "no-delay": "遅延なし、ただ繋がりと愛！",
+        "up-to-disscount": "最大75％割引",
+        "hours": "時間",
+        "min": "分",
+        "sec": "秒",
+        "week": "週",
+        "day": "日",
+        "upgrade-to-unlock": "解除するためにアップグレード",
+        "unlimited-custom-girlfriends": "無制限のカスタムガールフレンド",
+        "unlimited-messages": "無制限のメッセージ",
+        "unlimited-photos": "無制限の写真",
+        "remove-all-ads": "すべての広告を削除",
+        "nsfw-mode": "フィルタリングされていないNSFWおよびエロティックモード"
+    },
+    "Landing12": {
+        "welcome": "IVYへようこそ",
+        "title": "あなたのAIガールフレンドを作成",
+        "create-now": "今すぐ作成"
+    },
+    "Telegram": {
+        "ListBot": {
+            "welcome": "IVYへようこそ",
+            "title": "AIガールフレンドを選ぶ",
+            "chat-now": "今すぐチャット",
+            "bot-bio": "プロフィール",
+            "choose-one": "1つを選ぶ",
+            "or": "または",
+            "create-your-own": "自分だけの彼女を作る",
+            "starting-chat": "チャットを開始する"
+        },
+        "List12": {
+            "welcome": "IVYへようこそ",
+            "title": "AIガールフレンドを作成",
+            "create-now": "今すぐ作成"
+        },
+        "Create": {
+            "Templates": {
+                "write-idea-placeholder": "あなたの最も突飛な夢は何ですか?"
+            }
+        },
+        "Setting": {
+            "Numbers of all time": "これまでの数字",
+            "Messages": "メッセージ",
+            "Photos": "写真",
+            "Settings": "設定",
+            "Language": "言語"
+        }
+    }
+}
