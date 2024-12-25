@@ -21,11 +21,11 @@ const NavbarItem = ({
   return (
     <Link href={href} className={cn("text-white", active && "text-primary")}>
       <div className="relative flex w-16 flex-col items-center gap-2 whitespace-nowrap">
-        <div className="relative h-10 w-10">
+        <div className="relative h-11 w-11">
           <div
             className={cn(
               "absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-300",
-              active && "bottom-2 scale-150",
+              active && "bottom-4 scale-[1.75]",
             )}
           >
             {icon}

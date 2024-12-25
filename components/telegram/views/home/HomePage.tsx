@@ -98,17 +98,23 @@ const HomePage = () => {
             <div className="h-full w-full bg-gradient-to-l from-transparent to-primary/25"></div>
           </div>
           <div
-            className="relative flex items-center justify-between p-4"
+            className="relative flex items-center justify-around px-4 py-2 text-center"
             style={{
               fontFamily: "Luminari",
             }}
           >
-            <div>Total bots: {beautifulNumber(gameStats?.playingNumbers)}</div>
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div>Playing: {beautifulNumber(gameStats?.playingUsers)}</div>
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div className="flex items-center gap-1.5">
-              Prize total:{" "}
+            <div>
+              <div>Total bots:</div>
+              <div>{beautifulNumber(gameStats?.playingNumbers)}</div>
+            </div>
+            <div className="mb-5 h-1.5 w-1.5 rounded-full bg-primary"></div>
+            <div>
+              <div>Playing:</div>
+              <div>{beautifulNumber(gameStats?.playingUsers)}</div>
+            </div>
+            <div className="mb-5 h-1.5 w-1.5 rounded-full bg-primary"></div>
+            <div className="flex flex-col items-center">
+              <div>Prize total:</div>
               <CoinAmount
                 amount={(
                   +(gameStats?.totalPrice || 0) * Math.pow(10, 18)
