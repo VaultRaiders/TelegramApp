@@ -4,7 +4,7 @@ import { useLaunchParams } from "@telegram-apps/sdk-react";
 import Image from "next/image";
 
 import BotCard from "@/components/common/BotCard";
-import { useBotList } from "@/hooks/api/useBotList";
+import { useMyBotList } from "@/hooks/api/useMyBotList";
 import { Link } from "@/i18n/routing";
 import { useCreateStore } from "@/store/create";
 
@@ -12,7 +12,7 @@ const MyBotPage = () => {
   const { setBotData } = useCreateStore();
   const user = useLaunchParams()?.initData?.user;
 
-  const { data: botList } = useBotList({ createdBy: `${user?.id}` });
+  const { data: botList } = useMyBotList({ createdBy: `${user?.id}` });
 
   return (
     <div
