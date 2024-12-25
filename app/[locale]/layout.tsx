@@ -15,7 +15,6 @@ import { getSEOTags } from "@/libs/seo";
 
 import "@/app/globals.css";
 import RootProvider from "./provider";
-import Head from "next/head";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -48,36 +47,6 @@ export default async function RootLayout({
       data-theme={config.colors.theme}
       className={font.className}
     >
-      <Head>
-        <link
-          rel="preload"
-          href="/fonts/Asul-Regular.ttf"
-          as="font"
-          crossOrigin=""
-          type="font/ttf"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Jacquard24-Regular.ttf"
-          as="font"
-          crossOrigin=""
-          type="font/ttf"
-        />
-        <link
-          rel="preload"
-          href="/fonts/JimNightshade-Regular.ttf"
-          as="font"
-          crossOrigin=""
-          type="font/ttf"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Luminari-Regular.ttf"
-          as="font"
-          crossOrigin=""
-          type="font/ttf"
-        />
-      </Head>
       <body className="no-scrollbar min-h-dvh bg-gray-950">
         <NextIntlClientProvider messages={messages}>
           <TelegramProvider>

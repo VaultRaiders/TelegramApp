@@ -57,7 +57,7 @@ progress::-webkit-progress-value {
   font-family: "Asul";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url("/fonts/Asul-Regular.ttf");
 }
 
@@ -65,7 +65,7 @@ progress::-webkit-progress-value {
   font-family: "Jacquard24";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url("/fonts/Jacquard24-Regular.ttf");
 }
 
@@ -73,7 +73,7 @@ progress::-webkit-progress-value {
   font-family: "JimNightshade";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url("/fonts/JimNightshade-Regular.ttf");
 }
 
@@ -81,6 +81,6 @@ progress::-webkit-progress-value {
   font-family: "Luminari";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url("/fonts/Luminari-Regular.ttf");
 }

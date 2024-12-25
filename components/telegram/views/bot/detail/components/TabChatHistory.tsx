@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import TimeAgo from "timeago-react";
+
 import Image from "next/image";
+import TimeAgo from "timeago-react";
 
 import { useBotChatHistory } from "@/hooks/api/useBotChatHistory";
 import { useBotDetail } from "@/hooks/api/useBotDetail";
