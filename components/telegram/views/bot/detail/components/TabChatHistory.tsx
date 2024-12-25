@@ -72,7 +72,7 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
           enableScroll && "overflow-y-auto",
         )}
       >
-        <div className="space-y-5 px-6">
+        <div className="space-y-5 px-6 pb-40">
           {chatData?.map((message) =>
             message?.senderRole === "bot" ? (
               <div key={message.id} className="flex gap-2">

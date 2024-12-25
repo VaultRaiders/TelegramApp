@@ -114,7 +114,7 @@ const HomePage = () => {
                   +(gameStats?.totalPrice || 0) * Math.pow(10, 18)
                 ).toString()}
                 normalFont
-                className="text-while pb-0 text-base"
+                className="pb-0 text-base text-current"
               />
             </div>
           </div>

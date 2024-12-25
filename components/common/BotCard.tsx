@@ -37,7 +37,7 @@ const BotCard = ({
         </div>
         <div className="relative z-10 flex w-full flex-col gap-2 bg-gradient-to-t from-black/70 from-30% to-transparent p-3 pt-5">
           <div
-            className="text-center text-3xl"
+            className="text-center text-3xl uppercase"
             style={{
               fontFamily: "JimNightshade",
             }}

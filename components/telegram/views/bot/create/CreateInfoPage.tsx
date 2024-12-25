@@ -81,12 +81,13 @@ const CreateInfoPage = () => {
             <div>Bot Name</div>
             <input
               type="text"
+              placeholder="Enter bot name"
               value={botData?.displayName}
               onChange={(e) =>
                 setBotData({ ...botData, displayName: e.target.value })
               }
               autoComplete="off"
-              className="w-full bg-transparent text-center text-3xl focus:border-0 focus:outline-none focus:ring-0"
+              className="w-full bg-transparent text-center text-3xl uppercase focus:border-0 focus:outline-none focus:ring-0"
               style={{
                 fontFamily: "JimNightshade",
               }}
