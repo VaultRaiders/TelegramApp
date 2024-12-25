@@ -1,36 +1,70 @@
-# ShipFast — Typescript
+# Vault Raiders 🧙‍♂️
 
+Vault Raiders is an innovative blockchain game that integrates advanced AI technology at its core. Players can create and interact with AI-powered bots, each with unique personalities and capabilities. The game leverages blockchain to ensure secure and transparent transactions, providing a seamless and immersive gaming experience. Join the adventure and explore the endless possibilities with Vault Raiders!
 
-Hey maker 👋 it's Marc from [ShipFast](https://shipfa.st/docs). Let's get your startup off the ground, FAST ⚡️
+## API
 
-<sub>**Watch/Star the repo to be notified when updates are pushed**</sub>
+### Profile
 
-## Get Started
+```
+curl --location 'http://localhost:3000/api/v1/user/me'
+```
 
-1. Follow the [Get Started Tutorial](https://shipfa.st/docs) to clone the repo and run your local server 💻
+### Leaderboard
 
-<sub>**Looking for the /pages router version?** Use this [documentation](https://shipfa.st/docs-old) instead</sub>
+```
+curl --location 'http://localhost:3000/api/v1/user/leaderboard'
+```
 
-2. Follow the [Ship In 5 Minutes Tutorial](https://shipfa.st/docs/tutorials/ship-in-5-minutes) to learn the foundation and ship your app quickly ⚡️
+### Game status (number user, number bot, total pools,...)
 
-## Links
+```
+curl --location 'http://localhost:3000/api/v1/bot/stats'
+```
 
--   [📚 Documentation](https://shipfa.st/docs)
--   [📣 Updates](https://shipfast.beehiiv.com/)
--   [🧑‍💻 Discord](https://shipfa.st/dashboard)
--   [🥇 Leaderboard](https://shipfa.st/leaderboard)
+### Create bot
 
-## Support
+```
+curl --location --request POST 'http://localhost:3000/api/v1/bot' \
+--header 'Content-Type: application/json' \
+--data '{
+    "displayName": "Bot1",
+    "prompt": "abcxyz",
+    "password": "a",
+    "photoUrl": "photo"
+}'
+```
 
-Reach out to me on [Twitter](https://twitter.com/marc_louvion) or marc@shipfa.st
+### List bots
 
-\_
+```
+curl --location 'http://localhost:3000/api/v1/bot'
+```
 
-Let's ship it, FAST ⚡️
+### Bot detail
 
-P.S.
+```
+curl --location 'http://localhost:3000/api/v1/bot/:botId'
+```
 
--   Want to showcase your startups? Get your [Indie Page](https://indiepa.ge?ref=shipfast_readme) and share your entrepreneur's journey. Join 3,132 founders ⭐️
--   Don't get banned from Stripe for 1 dispute. Use [ByeDispute](https://byedispute.com/?ref=shipfast_readme) to prevent them from happenening 🛡️
--   Make your launch go viral and get your first customers with [LaunchViral](https://launchvir.al/?ref=shipfast_readme) 🚀
--   Stop paying 0.4% per Stripe invoices [Zenvoice](https://zenvoice.io/?ref=shipfast_readme) 🤕
+### Bot chat history
+
+```
+curl --location 'http://localhost:3000/api/v1/bot/:botId/chat-history'
+```
+
+### Buy ticket chat
+
+```
+curl --location 'http://localhost:3000/api/v1/bot/:botId/buy-ticket' \
+--header 'Content-Type: application/json' \
+--data '{
+    "password": "a"
+}'
+```
+
+### Start chat
+
+```
+curl --location --request POST 'http://localhost:3000/api/v1/bot/:botId/start'
+```

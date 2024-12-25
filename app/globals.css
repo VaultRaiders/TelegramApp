@@ -5,50 +5,82 @@
 
 html,
 body {
-    scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 
 /* It makes the HTML progress bar filling smooth when value change. */
 progress::-webkit-progress-value {
-    transition: 0.6s width ease-out;
+  transition: 0.6s width ease-out;
 }
 
 @layer base {
-    .btn-gradient {
-        @apply animate-shimmer !border-0 !border-transparent !bg-transparent !bg-gradient !bg-[length:300%_300%] !text-white shadow duration-100 hover:saturate-[1.2] disabled:!bg-gray-500/30 disabled:!bg-none;
-    }
-    .btn {
-        @apply !capitalize;
-    }
+  .btn-gradient {
+    @apply animate-shimmer !border-0 !border-transparent !bg-transparent !bg-gradient !bg-[length:300%_300%] !text-white shadow duration-100 hover:saturate-[1.2] disabled:!bg-gray-500/30 disabled:!bg-none;
+  }
+  .btn {
+    @apply !capitalize;
+  }
 
-    html {
-        font-family: "DM Sans", sans-serif;
-    }
+  html {
+    font-family: "DM Sans", sans-serif;
+  }
 
-    .chat-end {
-        place-items: end;
-        grid-template-columns: 2fr auto;
-    }
+  .chat-end {
+    place-items: end;
+    grid-template-columns: 2fr auto;
+  }
 
-    .chat-start {
-        place-items: start;
-        grid-template-columns: auto 2fr;
-    }
+  .chat-start {
+    place-items: start;
+    grid-template-columns: auto 2fr;
+  }
 
-    .chat-bubble em {
-        font-style: italic;
-        color: #999;
-    }
+  .chat-bubble em {
+    font-style: italic;
+    color: #999;
+  }
 }
 
 @layer utilities {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-    }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@font-face {
+  font-family: "Asul";
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url("/fonts/Asul-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Jacquard24";
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url("/fonts/Jacquard24-Regular.ttf");
+}
+
+@font-face {
+  font-family: "JimNightshade";
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url("/fonts/JimNightshade-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Luminari";
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url("/fonts/Luminari-Regular.ttf");
 }

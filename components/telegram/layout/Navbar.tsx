@@ -41,7 +41,12 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex w-full justify-between rounded-t-[1.25rem] border-t border-primary/25 bg-gray-950/90 px-5 pb-6 pt-1">
+    <div
+      className="flex w-full justify-between rounded-t-[1.25rem] border-t border-primary/25 bg-gray-950/90 px-5 pb-6 pt-1 text-[#BEB7B1]"
+      style={{
+        fontFamily: "Luminari",
+      }}
+    >
       <NavbarItem
         icon={
           <div className="h-10 w-10">
@@ -99,8 +104,8 @@ const Navbar = () => {
           </div>
         }
         label="Create bot"
-        active={pathname.startsWith("/create")}
-        href="/create"
+        active={pathname.startsWith("/my-bot")}
+        href="/my-bot"
       />
     </div>
   );

@@ -81,3 +81,8 @@ interface IConfigData {
     instagram: string;
   };
 }
+
+interface IQueryResponse<T> {
+  data?: T;
+  message: "success" | "error";
+}

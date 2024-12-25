@@ -1,4 +1,4 @@
-interface IBotData {
+interface IBotOldData {
   id?: string;
   address?: string;
   created_at?: string;
@@ -27,6 +27,51 @@ interface IBotData {
   photo_model?: string;
   locale?: string;
   src?: string; // Optional field seen in the component but not in API response
+}
+
+interface IGameStatsData {
+  totalPrice?: string;
+  playingNumbers?: number;
+  playingUsers?: number;
+}
+
+interface IBotData {
+  id?: string;
+  address?: string;
+  openaiAssistantId?: string;
+  photoUrl?: string;
+  displayName?: string;
+  greeting?: string;
+  bio?: string;
+  prompt?: string;
+  createdBy?: string;
+  chatCount?: number;
+  messageCount?: number;
+  additionalInstructions?: string;
+  order?: number;
+  isActive?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+  createdByUsername?: string;
+  balance?: string;
+  ticketPrice?: string;
+  ticketCount?: number;
+  userCount?: number;
+  hasActiveTicket?: boolean;
+}
+
+interface IBotCreateData {
+  displayName?: string;
+  prompt?: string;
+  password?: string;
+  photoUrl?: string;
+}
+
+interface IBotChatMessageData {
+  id?: string;
+  text?: string;
+  senderRole?: string;
+  createdAt?: string;
 }
 
 interface ICustomBotData {

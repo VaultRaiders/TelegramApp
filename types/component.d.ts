@@ -16,10 +16,4 @@ interface ISelectionModalProps {
   onClose?: () => void;
 }
 
-interface IBotCardProps {
-  backgroundUrl?: string;
-  avatarUrl?: string;
-  name?: string;
-  vaultValue?: string;
-  tickerPrice?: string;
-}
+interface IBotCardProps extends IBotData {}

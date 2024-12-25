@@ -9,7 +9,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
   return (
     <Suspense fallback={<Loading />}>
       <Script strategy="lazyOnload" />
-      <div className="relative pb-20">
+      <div className="relative">
         {children}
         <div className="fixed bottom-0 left-0 right-0 z-50">
           <Navbar />

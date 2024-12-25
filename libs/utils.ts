@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { formatEther as formatEthereum, parseUnits } from "viem";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -64,4 +65,8 @@ export const beautifulNumber = (
     maximumSignificantDigits,
   });
   return `${+naturalPart + +decimal}`;
+};
+
+export const formatEther = (value?: string): string => {
+  return formatEthereum(parseUnits(value || "0", 0));
 };

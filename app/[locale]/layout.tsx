@@ -14,6 +14,7 @@ import { routing } from "@/i18n/routing";
 import { getSEOTags } from "@/libs/seo";
 
 import "@/app/globals.css";
+import RootProvider from "./provider";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -46,13 +47,12 @@ export default async function RootLayout({
       data-theme={config.colors.theme}
       className={font.className}
     >
-      <body>
+      <body className="no-scrollbar min-h-dvh bg-gray-950">
         <NextIntlClientProvider messages={messages}>
-          {" "}
           <TelegramProvider>
             <Suspense fallback={<Loading />}>
               <Toaster position="top-center" reverseOrder={false} />
-              {children}
+              <RootProvider>{children}</RootProvider>
             </Suspense>
           </TelegramProvider>
         </NextIntlClientProvider>
