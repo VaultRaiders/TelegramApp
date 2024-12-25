@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import TimeAgo from "timeago-react";
 import Image from "next/image";
 
 import { useBotChatHistory } from "@/hooks/api/useBotChatHistory";
@@ -98,14 +98,38 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
                     {botData?.displayName}
                   </div>
                   <div className="w-fit rounded-xl bg-[#32313F] p-2.5 text-white">
-                    {message?.text}
+                    <div
+                      style={{
+                        color: "#D1DBE6",
+                      }}
+                    >
+                      {message?.text}
+                    </div>
+                    <div
+                      className="text-right text-sm"
+                      style={{
+                        fontFamily: "Luminari",
+                        color: "#7D7D7D",
+                      }}
+                    >
+                      <TimeAgo datetime={message.createdAt} />
+                    </div>
                   </div>
                 </div>
               </div>
             ) : (
               <div key={message.id} className="flex justify-end">
                 <div className="w-fit rounded-xl bg-[#D1DBE6] p-2.5 text-[#2B2D37]">
-                  {message?.text}
+                  <div>{message?.text}</div>
+                  <div
+                    className="text-right text-sm"
+                    style={{
+                      fontFamily: "Luminari",
+                      color: "#7D7D7D",
+                    }}
+                  >
+                    <TimeAgo datetime={message.createdAt} />
+                  </div>
                 </div>
               </div>
             ),

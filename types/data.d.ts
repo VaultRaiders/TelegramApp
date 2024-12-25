@@ -63,6 +63,8 @@ interface IBotData {
   ticketCount?: number;
   userCount?: number;
   hasActiveTicket?: boolean;
+  lastRejectedUser?: string;
+  lastRejectedAt?: string;
 }
 
 interface IBotCreateData {

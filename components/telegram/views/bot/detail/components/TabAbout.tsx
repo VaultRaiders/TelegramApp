@@ -53,7 +53,7 @@ const TabAbout = ({ botId }: { botId: string }) => {
           - {botData?.displayName} -
         </div>
       </div>
-      <div className="grid grid-cols-2 px-6 pt-3 text-center">
+      <div className="grid grid-cols-3 px-4 pt-1 text-center">
         <div>
           <div
             className="text-sm"
@@ -80,6 +80,24 @@ const TabAbout = ({ botId }: { botId: string }) => {
             }}
           >
             Break Attempts
+          </div>
+          <div
+            className="text-xl"
+            style={{
+              fontFamily: "Asul",
+            }}
+          >
+            {botData?.ticketCount || 0}
+          </div>
+        </div>
+        <div>
+          <div
+            className="text-sm"
+            style={{
+              fontFamily: "Luminari",
+            }}
+          >
+            Message Price
           </div>
           <div
             className="text-xl"

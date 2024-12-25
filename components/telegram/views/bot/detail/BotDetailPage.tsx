@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { closeMiniApp } from "@telegram-apps/sdk-react";
 import Image from "next/image";
@@ -28,6 +28,39 @@ const BotDetailPage = () => {
   const [tab, setTab] = useState<number>(0);
   const [openDialog, setOpenDialog] = useState<boolean>(false);
   const [buying, setBuying] = useState<boolean>(false);
+  const [timeRemaining, setTimeRemaining] = useState<number>(); // 12 hours in seconds
+
+  useEffect(() => {
+    if (botData?.lastRejectedAt) {
+      const targetTime = new Date(
+        new Date(botData.lastRejectedAt).getTime() + 12 * 60 * 60 * 1000,
+      );
+      const newTimeRemaining = targetTime.getTime() - new Date().getTime();
+      setTimeRemaining(Math.round(newTimeRemaining / 1000));
+    }
+  }, [botData?.lastRejectedAt]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeRemaining((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(timer); // Stop the countdown when it reaches zero
+          return 0;
+        }
+        return prevTime - 1; // Decrease the time by 1 second
+      });
+    }, 1000);
+    return () => clearInterval(timer); // Cleanup the interval on unmount
+  }, []);
+
+  const formatTime = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return `${hours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+  };
 
   const handleStartChat = async () => {
     await startBot({ botId });
@@ -77,24 +110,28 @@ const BotDetailPage = () => {
           <CoinAmount amount={botData?.balance} className="text-4xl" />
         </div>
 
-        <div className="flex flex-col items-center justify-center">
-          <div
-            className="text-sm"
-            style={{
-              fontFamily: "Luminari",
-            }}
-          >
-            Time Remaining
+        {timeRemaining ? (
+          <div className="flex flex-col items-center justify-center">
+            <div
+              className="text-sm"
+              style={{
+                fontFamily: "Luminari",
+              }}
+            >
+              Time Remaining
+            </div>
+            <div
+              className="flex items-center gap-1 text-xl text-red-500"
+              style={{
+                fontFamily: "Asul",
+              }}
+            >
+              {formatTime(timeRemaining)}
+            </div>
           </div>
-          <div
-            className="flex items-center gap-1 text-xl text-red-500"
-            style={{
-              fontFamily: "Asul",
-            }}
-          >
-            11:34:12
-          </div>
-        </div>
+        ) : (
+          ""
+        )}
       </div>
 
       <div className="flex flex-col items-center gap-3 pt-20">

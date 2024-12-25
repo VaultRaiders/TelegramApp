@@ -12,10 +12,8 @@ import ListBot from "./components/ListBot";
 
 const HomePage = () => {
   const user = useLaunchParams()?.initData?.user;
-
   const { data: walletData } = useUserWallet();
   const { data: gameStats } = useGameStats();
-
   return (
     <div
       className="min-h-dvh pb-24"
@@ -42,6 +40,7 @@ const HomePage = () => {
                 style={{
                   fontFamily: "Luminari",
                 }}
+                className="truncate text-ellipsis"
               >
                 {user?.username}
               </div>
@@ -104,16 +103,18 @@ const HomePage = () => {
               fontFamily: "Luminari",
             }}
           >
-            <div>Total plays: {beautifulNumber(gameStats?.playingNumbers)}</div>
+            <div>Total bots: {beautifulNumber(gameStats?.playingNumbers)}</div>
             <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div>Wizards: {beautifulNumber(gameStats?.playingUsers)}</div>
+            <div>Playing: {beautifulNumber(gameStats?.playingUsers)}</div>
             <div className="h-1 w-1 rounded-full bg-primary"></div>
             <div className="flex items-center gap-1.5">
               Prize total:{" "}
               <CoinAmount
-                amount={(+(gameStats?.totalPrice || 0) * (10 ^ 18)).toString()}
+                amount={(
+                  +(gameStats?.totalPrice || 0) * Math.pow(10, 18)
+                ).toString()}
                 normalFont
-                className="pb-0 text-base"
+                className="text-while pb-0 text-base"
               />
             </div>
           </div>
