@@ -16,7 +16,7 @@ const MyBotPage = () => {
 
   return (
     <div
-      className="relative min-h-dvh pb-24"
+      className="relative min-h-dvh overflow-hidden pb-24"
       style={{
         backgroundImage: "url('/assets/bg-create.png')",
         backgroundSize: "495px 1051px",
