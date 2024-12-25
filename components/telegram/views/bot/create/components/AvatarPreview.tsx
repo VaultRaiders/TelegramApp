@@ -40,7 +40,7 @@ const AvatarPreview = () => {
             />
           </div>
           <div
-            className="absolute bottom-0 left-0 right-0 z-10 flex w-full flex-col gap-3 bg-gradient-to-t from-black/70 from-30% to-transparent p-3 pt-5 text-center text-xl text-primary"
+            className="absolute bottom-0 left-0 right-0 z-10 flex w-full flex-col gap-3 bg-gradient-to-t from-black/70 from-30% to-transparent p-3 pt-5 text-center text-xl uppercase text-primary"
             style={{
               fontFamily: "JimNightshade",
             }}

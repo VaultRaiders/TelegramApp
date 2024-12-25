@@ -72,6 +72,7 @@ interface IBotCreateData {
   prompt?: string;
   password?: string;
   photoUrl?: string;
+  initPrice?: string;
 }
 
 interface IBotChatMessageData {

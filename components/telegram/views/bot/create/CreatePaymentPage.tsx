@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import Image from "next/image";
 
@@ -8,6 +8,7 @@ import CoinAmount from "@/components/common/CoinAmount";
 import DialogPassword from "@/components/common/DialogPassword";
 import { GameButton } from "@/components/core/button";
 import { useBotCreate } from "@/hooks/api/useBotCreate";
+import { useUserWallet } from "@/hooks/api/useUserWallet";
 import { useRouter } from "@/i18n/routing";
 import { useCreateStore } from "@/store/create";
 
@@ -17,16 +18,25 @@ const CreatePaymentPage = () => {
   const router = useRouter();
 
   const { botData } = useCreateStore();
+
+  const { data: walletData } = useUserWallet();
   const { mutateAsync: createBot } = useBotCreate();
+
+  const [price, setPrice] = useState<number>(0);
 
   const [openDialogPassword, setOpenDialogPassword] = useState<boolean>(false);
   const [creating, setCreating] = useState<boolean>(false);
+
+  const totalPrice = useMemo(() => {
+    return `${price * 10000000000000000 + 10000000000000000}`;
+  }, [price]);
 
   const handleCreateBot = async (password: string) => {
     if (creating) return;
     setCreating(true);
 
     const { message } = await createBot({
+      initPrice: totalPrice,
       password,
       ...botData,
     });
@@ -95,17 +105,17 @@ const CreatePaymentPage = () => {
               <div className="flex justify-between font-bold">
                 Base Creation Fee
                 <CoinAmount
-                  amount={"5700000000000000"}
+                  amount={"10000000000000000"}
                   normalFont
                   className="text-base text-current"
                 />
               </div>
               <div className="text-sm text-[#665D4F]">
-                Base Fee for Bot Creation (20$)
+                Base Fee for Bot Creation (0.01 ETH)
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <div className="flex justify-between font-bold">
                 Instruction Length Fee
                 <CoinAmount
@@ -117,18 +127,30 @@ const CreatePaymentPage = () => {
               <div className="text-sm text-[#665D4F]">
                 System Prompt Length Fee ($0.01/words)
               </div>
-            </div>
+            </div> */}
 
             <div>
               <div className="flex justify-between font-bold">
                 Initial Pool Contribution
                 <CoinAmount
-                  amount={"2300000000000000"}
+                  amount={(price * 10000000000000000).toString()}
                   normalFont
                   className="text-base text-current"
                 />
               </div>
               <div className="text-sm text-[#665D4F]">Tokens Added to Pool</div>
+              <div className="mt-2">
+                <input
+                  type="range"
+                  min={0}
+                  max={Math.floor(
+                    +(walletData?.balance || 0) / 10000000000000000,
+                  )}
+                  value={price}
+                  onChange={(e) => setPrice(+e.target.value)}
+                  className="range range-xs [--range-shdw:#67451D]"
+                />
+              </div>
             </div>
 
             <div className="border-b border-[#9C9082]" />
@@ -136,7 +158,7 @@ const CreatePaymentPage = () => {
             <div className="flex justify-between font-bold">
               TOTAL
               <CoinAmount
-                amount={"8600000000000000"}
+                amount={totalPrice}
                 normalFont
                 className="text-base text-current"
               />
@@ -177,7 +199,7 @@ const CreatePaymentPage = () => {
       >
         <div className="space-y-1 pt-4 text-xl">
           <div>Total payment</div>
-          <CoinAmount amount={"8600000000000000"} />
+          <CoinAmount amount={totalPrice} />
         </div>
         <GameButton
           disabled={creating}

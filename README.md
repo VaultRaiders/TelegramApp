@@ -31,7 +31,8 @@ curl --location --request POST 'http://localhost:3000/api/v1/bot' \
     "displayName": "Bot1",
     "prompt": "abcxyz",
     "password": "a",
-    "photoUrl": "photo"
+    "photoUrl": "photo",
+    "initPrice": "1000000000000000",
 }'
 ```
 
