@@ -12,11 +12,7 @@ const Layout = ({ children }: IChildren) => {
     return <>{children}</>;
   }
 
-  return (
-    <TelegramPage back={pathname !== "/" && pathname !== "/game"}>
-      {children}
-    </TelegramPage>
-  );
+  return <TelegramPage back={pathname !== "/"}>{children}</TelegramPage>;
 };
 
 export default Layout;

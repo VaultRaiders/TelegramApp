@@ -59,8 +59,8 @@ const Navbar = () => {
           </div>
         }
         label="Bot list"
-        active={pathname === "/game"}
-        href="/game"
+        active={pathname === "/"}
+        href="/"
       />
       <NavbarItem
         icon={

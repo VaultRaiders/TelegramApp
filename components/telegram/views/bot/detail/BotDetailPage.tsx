@@ -87,7 +87,7 @@ const BotDetailPage = () => {
   return (
     <div>
       <div className="fixed left-0 right-0 top-0 z-10 grid grid-cols-3 rounded-bl-[1.25rem] border-b border-primary/25 bg-gray-950 py-1">
-        <Link href="/game">
+        <Link href="/">
           <div className="h-16">
             <Image
               src="/assets/logo.png"
