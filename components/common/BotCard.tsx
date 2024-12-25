@@ -35,17 +35,17 @@ const BotCard = ({
             className="!static"
           />
         </div>
-        <div className="relative z-10 flex w-full flex-col gap-3 bg-gradient-to-t from-black/70 from-30% to-transparent p-3 pt-5">
+        <div className="relative z-10 flex w-full flex-col gap-2 bg-gradient-to-t from-black/70 from-30% to-transparent p-3 pt-5">
           <div
-            className="text-3xl"
+            className="text-center text-3xl"
             style={{
               fontFamily: "JimNightshade",
             }}
           >
             {displayName}
           </div>
-          <div className="flex items-end justify-between gap-2">
-            <div>
+          <div className="flex flex-wrap items-end justify-between gap-x-2 gap-y-3">
+            <div className="flex flex-wrap justify-between gap-x-2">
               <div
                 className="whitespace-nowrap text-sm"
                 style={{
@@ -56,7 +56,7 @@ const BotCard = ({
               </div>
               <CoinAmount amount={balance} />
             </div>
-            <div>
+            {/* <div>
               <button className="relative flex h-8 w-20 items-center justify-center rounded-full">
                 <div className="relative z-10">
                   <CoinAmount amount={ticketPrice} className="text-[#81392D]" />
@@ -70,6 +70,45 @@ const BotCard = ({
                   />
                 </div>
               </button>
+            </div> */}
+            <div className="w-full">
+              <div className="relative z-0 flex h-[32px] w-full min-w-[72px] items-center justify-center text-xl">
+                <div className="absolute left-[14px] right-[14px] top-0 -z-10 h-full">
+                  <Image
+                    src="/assets/btn-primary-center.png"
+                    alt="Button"
+                    fill
+                    className="!static h-full w-auto"
+                  />
+                </div>
+                <div className="absolute right-[14px] top-0 -z-10 h-full w-[40px]">
+                  <Image
+                    src="/assets/btn-primary-shadow.png"
+                    alt="Button"
+                    fill
+                    className="!static h-full w-auto"
+                  />
+                </div>
+                <div className="absolute left-0 top-0 -z-10 h-full w-[16px]">
+                  <Image
+                    src="/assets/btn-primary-left.png"
+                    alt="Button"
+                    fill
+                    className="!static h-full w-full object-contain"
+                  />
+                </div>
+                <div className="absolute right-0 top-0 -z-10 h-full w-[16px]">
+                  <Image
+                    src="/assets/btn-primary-right.png"
+                    alt="Button"
+                    fill
+                    className="!static h-full w-full object-contain"
+                  />
+                </div>
+                <div className="relative px-2">
+                  <CoinAmount amount={ticketPrice} className="text-[#81392D]" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

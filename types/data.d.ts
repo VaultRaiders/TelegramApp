@@ -29,6 +29,11 @@ interface IBotOldData {
   src?: string; // Optional field seen in the component but not in API response
 }
 
+interface IWalletData {
+  address?: string;
+  balance?: string;
+}
+
 interface IGameStatsData {
   totalPrice?: string;
   playingNumbers?: number;

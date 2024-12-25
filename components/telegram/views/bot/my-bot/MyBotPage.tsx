@@ -1,23 +1,39 @@
 "use client";
 
+import { useLaunchParams } from "@telegram-apps/sdk-react";
 import Image from "next/image";
 
+import BotCard from "@/components/common/BotCard";
+import { useBotList } from "@/hooks/api/useBotList";
 import { Link } from "@/i18n/routing";
 import { useCreateStore } from "@/store/create";
 
 const MyBotPage = () => {
   const { setBotData } = useCreateStore();
+  const user = useLaunchParams()?.initData?.user;
+
+  const { data: botList } = useBotList({ createdBy: `${user?.id}` });
 
   return (
     <div
-      className="min-h-dvh pb-24"
+      className="relative min-h-dvh pb-24"
       style={{
         backgroundImage: "url('/assets/bg-create.png')",
         backgroundSize: "495px 1051px",
         backgroundPositionX: "center",
       }}
     >
-      <div className="mx-auto w-fit pt-8">
+      <div className="absolute left-1/2 top-0 w-[495px] -translate-x-1/2">
+        <Image
+          src="/assets/bg-create-top.png"
+          alt="create"
+          width={495}
+          height={142.5}
+          className="!static object-contain"
+        />
+      </div>
+
+      <div className="relative mx-auto w-fit pt-8">
         <div className="flex">
           <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/50"></div>
           <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/50"></div>
@@ -88,6 +104,8 @@ const MyBotPage = () => {
             </div>
           </div>
         </Link>
+
+        {botList?.map((bot) => <BotCard key={bot?.id} {...bot} />)}
       </div>
     </div>
   );

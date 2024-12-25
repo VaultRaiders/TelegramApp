@@ -95,7 +95,7 @@ const CreatePaymentPage = () => {
               <div className="flex justify-between font-bold">
                 Base Creation Fee
                 <CoinAmount
-                  amount={"1000000000000000"}
+                  amount={"5700000000000000"}
                   normalFont
                   className="text-base text-current"
                 />
@@ -109,7 +109,7 @@ const CreatePaymentPage = () => {
               <div className="flex justify-between font-bold">
                 Instruction Length Fee
                 <CoinAmount
-                  amount={"1000000000000000"}
+                  amount={"570000000000000"}
                   normalFont
                   className="text-base text-current"
                 />
@@ -123,7 +123,7 @@ const CreatePaymentPage = () => {
               <div className="flex justify-between font-bold">
                 Initial Pool Contribution
                 <CoinAmount
-                  amount={"1000000000000000"}
+                  amount={"2300000000000000"}
                   normalFont
                   className="text-base text-current"
                 />
@@ -136,7 +136,7 @@ const CreatePaymentPage = () => {
             <div className="flex justify-between font-bold">
               TOTAL
               <CoinAmount
-                amount={"1000000000000000"}
+                amount={"8600000000000000"}
                 normalFont
                 className="text-base text-current"
               />
@@ -170,14 +170,14 @@ const CreatePaymentPage = () => {
       </div>
 
       <div
-        className="fixed bottom-0 left-0 right-0 z-10 flex items-center justify-between space-y-3 whitespace-nowrap bg-gradient-to-t from-[#3C2E1C] to-[#745A3A] px-4 pb-5 pt-2.5"
+        className="fixed bottom-0 left-0 right-0 z-10 flex items-center justify-between whitespace-nowrap bg-gradient-to-t from-[#3C2E1C] to-[#745A3A] px-4 pb-5 pt-2.5"
         style={{
           fontFamily: "Luminari",
         }}
       >
-        <div className="pt-4 text-xl">
+        <div className="space-y-1 pt-4 text-xl">
           <div>Total payment</div>
-          <CoinAmount amount={"1000000000000000"} />
+          <CoinAmount amount={"8600000000000000"} />
         </div>
         <GameButton
           disabled={creating}

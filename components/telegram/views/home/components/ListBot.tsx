@@ -9,7 +9,7 @@ const ListBot = () => {
 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-      {bots?.map((bot, index) => <BotCard key={index} {...bot} />)}
+      {bots?.map((bot) => <BotCard key={bot?.id} {...bot} />)}
     </div>
   );
 };

@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import CoinAmount from "@/components/common/CoinAmount";
 import { useGameStats } from "@/hooks/api/useGameStats";
+import { useUserWallet } from "@/hooks/api/useUserWallet";
 import { beautifulNumber } from "@/libs/utils";
 
 import ListBot from "./components/ListBot";
@@ -12,6 +13,7 @@ import ListBot from "./components/ListBot";
 const HomePage = () => {
   const user = useLaunchParams()?.initData?.user;
 
+  const { data: walletData } = useUserWallet();
   const { data: gameStats } = useGameStats();
 
   return (
@@ -79,7 +81,7 @@ const HomePage = () => {
                   fontFamily: "Jacquard24",
                 }}
               >
-                20000
+                <CoinAmount amount={walletData?.balance} showCoin={false} />
               </div>
             </div>
           </div>
@@ -102,16 +104,16 @@ const HomePage = () => {
               fontFamily: "Luminari",
             }}
           >
-            <div>Total users: {beautifulNumber(gameStats?.playingNumbers)}</div>
+            <div>Total plays: {beautifulNumber(gameStats?.playingNumbers)}</div>
             <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div>Playing: {beautifulNumber(gameStats?.playingUsers)}</div>
+            <div>Wizards: {beautifulNumber(gameStats?.playingUsers)}</div>
             <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div className="flex gap-1.5">
+            <div className="flex items-center gap-1.5">
               Prize total:{" "}
               <CoinAmount
                 amount={(+(gameStats?.totalPrice || 0) * (10 ^ 18)).toString()}
                 normalFont
-                className="text-base"
+                className="pb-0 text-base"
               />
             </div>
           </div>

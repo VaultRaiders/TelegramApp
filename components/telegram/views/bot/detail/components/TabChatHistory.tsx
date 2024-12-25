@@ -83,7 +83,11 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
                   }}
                 >
                   <Image
-                    src={botData?.photoUrl}
+                    src={
+                      botData?.photoUrl !== "goblin1"
+                        ? botData?.photoUrl
+                        : "/assets/avatar-bot-1.png"
+                    }
                     alt="Bot"
                     fill
                     className="!static object-cover"
