@@ -34,8 +34,16 @@ const HomePage = () => {
                 className="!static h-10 w-auto"
               />
             </div>
-            <div className="ralative flex items-center gap-2">
-              <div className="h-11 w-11 rounded-full bg-purple-400"></div>
+            <div className="relative flex items-center gap-2">
+              <div className="relative h-11 w-11">
+                <Image
+                  src={"/assets/avatar-default.png"}
+                  alt="Avatar"
+                  fill
+                  className="rounded-full"
+                  objectFit="cover"
+                />
+              </div>
               <div
                 style={{
                   fontFamily: "Luminari",
@@ -105,7 +113,7 @@ const HomePage = () => {
           >
             <div>
               <div>Total bots:</div>
-              <div>{beautifulNumber(gameStats?.playingNumbers)}</div>
+              <div>{beautifulNumber(gameStats?.totalBots || 0)}</div>
             </div>
             <div className="mb-5 h-1.5 w-1.5 rounded-full bg-primary"></div>
             <div>

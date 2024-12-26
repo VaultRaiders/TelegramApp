@@ -38,6 +38,7 @@ interface IGameStatsData {
   totalPrice?: string;
   playingNumbers?: number;
   playingUsers?: number;
+  totalBots: number;
 }
 
 interface IBotData {

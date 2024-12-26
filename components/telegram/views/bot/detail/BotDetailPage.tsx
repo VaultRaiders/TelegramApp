@@ -28,14 +28,17 @@ const BotDetailPage = () => {
   const [tab, setTab] = useState<number>(0);
   const [openDialog, setOpenDialog] = useState<boolean>(false);
   const [buying, setBuying] = useState<boolean>(false);
-  const [timeRemaining, setTimeRemaining] = useState<number>(); // 12 hours in seconds
-
+  const [timeRemaining, setTimeRemaining] = useState<number>();
   useEffect(() => {
     if (botData?.lastRejectedAt) {
       const targetTime = new Date(
-        new Date(botData.lastRejectedAt).getTime() + 12 * 60 * 60 * 1000,
+        new Date(botData.lastRejectedAt).getTime() + 12 * 60 * 60 * 1000, //12 hours in seconds,
       );
       const newTimeRemaining = targetTime.getTime() - new Date().getTime();
+      if (newTimeRemaining <= 0) {
+        setTimeRemaining(0);
+        return;
+      }
       setTimeRemaining(Math.round(newTimeRemaining / 1000));
     }
   }, [botData?.lastRejectedAt]);
@@ -97,7 +100,6 @@ const BotDetailPage = () => {
             />
           </div>
         </Link>
-
         <div className="flex flex-col items-center justify-center text-primary">
           <div
             className="text-sm"
@@ -109,7 +111,6 @@ const BotDetailPage = () => {
           </div>
           <CoinAmount amount={botData?.balance} className="text-4xl" />
         </div>
-
         {timeRemaining ? (
           <div className="flex flex-col items-center justify-center">
             <div
