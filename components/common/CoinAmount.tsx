@@ -8,11 +8,13 @@ const CoinAmount = ({
   amount,
   normalFont = false,
   showCoin = true,
+  noFormat = false,
   className,
 }: {
   amount?: string;
   normalFont?: boolean;
   showCoin?: boolean;
+  noFormat?: boolean;
   className?: string;
 }) => {
   return (
@@ -23,7 +25,7 @@ const CoinAmount = ({
       )}
       style={normalFont ? {} : { fontFamily: "Jacquard24" }}
     >
-      <CryptoAmountRound amount={formatEther(amount)} />
+      <CryptoAmountRound amount={noFormat ? amount : formatEther(amount)} />
       {/* {beautifulNumber(formatEther(amount))} */}
       {showCoin && (
         <div className="h-5 w-5">

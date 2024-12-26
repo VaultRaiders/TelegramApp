@@ -41,6 +41,26 @@ interface IGameStatsData {
   totalBots: number;
 }
 
+interface ILeaderboardData {
+  leaderboard?: {
+    id?: string;
+    chatId?: string;
+    username?: string;
+    currentBotId?: string;
+    winCount?: number;
+    winingAmount?: string;
+    playCount?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  }[];
+  metadata?: {
+    totalParticipants?: number;
+    totalPrizeEarned?: string;
+    totalPlays?: number;
+    totalWin?: number;
+  };
+}
+
 interface IBotData {
   id?: string;
   address?: string;

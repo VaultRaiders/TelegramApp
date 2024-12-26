@@ -22,6 +22,9 @@ const NavbarItem = ({
     <Link href={href} className={cn("text-white", active && "text-primary")}>
       <div className="relative flex w-16 flex-col items-center gap-2 whitespace-nowrap">
         <div className="relative h-11 w-11">
+          {active && (
+            <div className="absolute bottom-0 left-1/2 h-20 w-28 -translate-x-1/2 rounded-full bg-black/80 blur-xl" />
+          )}
           <div
             className={cn(
               "absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-300",
@@ -42,7 +45,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="flex w-full justify-between rounded-t-[1.25rem] border-t border-primary/25 bg-gray-950/90 px-5 pb-6 pt-1 text-[#BEB7B1]"
+      className="flex w-full justify-between rounded-t-[1.25rem] border-t border-primary/25 bg-gray-950/90 px-5 pb-6 pt-1 text-[#BEB7B1] shadow-[0_-20px_20px_0_rgba(0,0,0,0.8)]"
       style={{
         fontFamily: "Luminari",
       }}

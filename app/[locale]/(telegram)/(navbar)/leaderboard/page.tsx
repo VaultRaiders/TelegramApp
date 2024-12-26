@@ -1,5 +1,7 @@
+import LeaderboardPage from "@/components/telegram/views/leaderboard/LeaderboardPage";
+
 const Page = () => {
-  return <div>Page</div>;
+  return <LeaderboardPage />;
 };
 
 export default Page;
