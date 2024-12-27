@@ -84,3 +84,11 @@ progress::-webkit-progress-value {
   font-display: swap;
   src: url("/fonts/Luminari-Regular.ttf");
 }
+
+@font-face {
+  font-family: "MicroGrotesk";
+  font-style: normal;
+  font-weight: 250;
+  font-display: swap;
+  src: url("/fonts/MicroGrotesk.ttf");
+}

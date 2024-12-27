@@ -29,7 +29,11 @@ const BotCard = ({
         </div>
         <div className="absolute left-1/2 top-[10%] w-[80%] -translate-x-1/2">
           <Image
-            src={photoUrl !== "goblin1" ? photoUrl : "/assets/avatar-bot-1.png"}
+            src={
+              photoUrl
+                ? `https://storage.googleapis.com/vault-raiders/${photoUrl}`
+                : "/assets/avatar-bot-1.png"
+            }
             alt="Background"
             fill
             className="!static"

@@ -11,7 +11,7 @@ interface UseBotListReturn {
   loadMore: () => Promise<void>;
 }
 
-export const useBotList = (): UseBotListReturn => {
+export const useBotList = ({ isActive = true } = {}): UseBotListReturn => {
   const [bots, setBots] = useState<IBotData[]>([]);
   const [isFetching, setIsFetching] = useState(true);
   const [error, setError] = useState("");
@@ -24,7 +24,7 @@ export const useBotList = (): UseBotListReturn => {
 
     try {
       const response = await telegramApiClient.get(
-        `/bot?isPublic=true&page=${page}&limit=${BOT_LIST_PAGE_SIZE}`,
+        `/bot?isPublic=${isActive}&page=${page}&limit=${BOT_LIST_PAGE_SIZE}`,
       );
       const newBots: IBotData[] = response.data.data;
 

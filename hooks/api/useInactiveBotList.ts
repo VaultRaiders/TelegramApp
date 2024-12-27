@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { BOT_LIST_PAGE_SIZE } from "@/constants";
 import telegramApiClient from "@/libs/api-telegram";
 
-export const useBotList = ({
+export const useInactiveBotList = ({
   page,
   pageSize,
 }: {
@@ -11,14 +11,12 @@ export const useBotList = ({
   pageSize?: number;
 }) => {
   return useQuery({
-    queryKey: ["botList", page, pageSize],
+    queryKey: ["botInactiveList", page, pageSize],
     queryFn: async (): Promise<IBotData[]> => {
       const response = await telegramApiClient.get(
-        `/bot?isActive=true&orderBy=balance&sort=desc&page=${page ?? 1}&limit=${pageSize ?? BOT_LIST_PAGE_SIZE}`,
+        `/bot?isActive=false&orderBy=balance&sort=desc&page=${page ?? 1}&limit=${pageSize ?? BOT_LIST_PAGE_SIZE}`,
       );
-
       return response.data.data || [];
     },
-    refetchOnMount: true,
   });
 };

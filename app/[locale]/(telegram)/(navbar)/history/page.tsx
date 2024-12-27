@@ -1,5 +1,7 @@
+import History from "@/components/telegram/views/history/History";
+
 const Page = () => {
-  return <div>Page</div>;
+  return <History />;
 };
 
 export default Page;

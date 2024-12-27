@@ -86,6 +86,9 @@ interface IBotData {
   hasActiveTicket?: boolean;
   lastRejectedUser?: string;
   lastRejectedAt?: string;
+  winMessageId?: string;
+  winner?: string;
+  winnerWallet?: string;
 }
 
 interface IBotCreateData {

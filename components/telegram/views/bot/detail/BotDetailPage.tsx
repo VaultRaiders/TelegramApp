@@ -13,9 +13,9 @@ import { useBotDetail } from "@/hooks/api/useBotDetail";
 import { useBotStart } from "@/hooks/api/useBotStart";
 import { Link, useParams } from "@/i18n/routing";
 
-import Tab from "./components/Tab";
-import TabAbout from "./components/TabAbout";
-import TabChatHistory from "./components/TabChatHistory";
+import Tab from "./tabs/Tab";
+import TabAbout from "./tabs/TabAbout";
+import TabChatHistory from "./tabs/TabChatHistory";
 
 const BotDetailPage = () => {
   const params = useParams();
@@ -144,36 +144,39 @@ const BotDetailPage = () => {
           <TabAbout botId={botId} />
         )}
       </div>
-
-      <div
-        className="fixed bottom-0 left-0 right-0 z-10 space-y-3 bg-gradient-to-t from-[#3C2E1C] to-[#745A3A] px-4 pb-5 pt-2.5"
-        style={{
-          fontFamily: "Luminari",
-        }}
-      >
-        {botData?.hasActiveTicket ? (
-          <GameButton onClick={handleStartChat}>Send a message...</GameButton>
-        ) : (
-          <GameButton onClick={() => setOpenDialog(true)} disabled={buying}>
-            {buying ? (
-              "..."
-            ) : (
-              <>
-                Pay
-                <CoinAmount
-                  amount={botData?.ticketPrice}
-                  normalFont
-                  className="mx-1.5 text-xl text-current"
-                />
-                to send a message...
-              </>
-            )}
-          </GameButton>
-        )}
-        <div className="text-center">
-          80% of your fee goes to the prize pool
+      {botData?.isActive ? (
+        <div
+          className="fixed bottom-0 left-0 right-0 z-10 space-y-3 bg-gradient-to-t from-[#3C2E1C] to-[#745A3A] px-4 pb-5 pt-2.5"
+          style={{
+            fontFamily: "Luminari",
+          }}
+        >
+          {botData?.hasActiveTicket ? (
+            <GameButton onClick={handleStartChat}>Send a message...</GameButton>
+          ) : (
+            <GameButton onClick={() => setOpenDialog(true)} disabled={buying}>
+              {buying ? (
+                "..."
+              ) : (
+                <>
+                  Pay
+                  <CoinAmount
+                    amount={botData?.ticketPrice}
+                    normalFont
+                    className="mx-1.5 text-xl text-current"
+                  />
+                  to send a message...
+                </>
+              )}
+            </GameButton>
+          )}
+          <div className="text-center">
+            80% of your fee goes to the prize pool
+          </div>
         </div>
-      </div>
+      ) : (
+        <></>
+      )}
 
       <DialogPassword
         open={openDialog}

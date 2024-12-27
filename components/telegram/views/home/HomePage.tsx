@@ -48,7 +48,7 @@ const HomePage = () => {
                 style={{
                   fontFamily: "Luminari",
                 }}
-                className="truncate text-ellipsis"
+                className="truncate text-ellipsis text-white"
               >
                 {user?.username}
               </div>
