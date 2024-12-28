@@ -7,6 +7,7 @@ import BotCard from "@/components/common/BotCard";
 import { useMyBotList } from "@/hooks/api/useMyBotList";
 import { Link } from "@/i18n/routing";
 import { useCreateStore } from "@/store/create";
+import PageHeading from "@/components/common/PageHeading";
 
 const MyBotPage = () => {
   const { setBotData } = useCreateStore();
@@ -34,29 +35,8 @@ const MyBotPage = () => {
       </div>
 
       <div className="relative mx-auto w-fit pt-8">
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/50"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/50"></div>
-        </div>
         <div className="relative">
-          <div className="absolute left-0 top-0 flex h-full w-full">
-            <div className="h-full w-full bg-gradient-to-r from-transparent to-yellow-950/50"></div>
-            <div className="h-full w-full bg-gradient-to-l from-transparent to-yellow-950/50"></div>
-          </div>
-          <div
-            className="relative flex items-center justify-center gap-2 p-2 px-20 text-3xl text-primary"
-            style={{
-              fontFamily: "JimNightshade",
-            }}
-          >
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div>YOUR BOT</div>
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/35"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/35"></div>
+          <PageHeading title="your bot" />
         </div>
       </div>
 

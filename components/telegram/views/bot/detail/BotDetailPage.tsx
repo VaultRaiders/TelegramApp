@@ -16,6 +16,7 @@ import { Link, useParams } from "@/i18n/routing";
 import Tab from "./tabs/Tab";
 import TabAbout from "./tabs/TabAbout";
 import TabChatHistory from "./tabs/TabChatHistory";
+import { calcRemainingHours, formatTimestampToObj } from "@/utils/time";
 
 const BotDetailPage = () => {
   const params = useParams();
@@ -29,17 +30,15 @@ const BotDetailPage = () => {
   const [openDialog, setOpenDialog] = useState<boolean>(false);
   const [buying, setBuying] = useState<boolean>(false);
   const [timeRemaining, setTimeRemaining] = useState<number>();
+
   useEffect(() => {
-    if (botData?.lastRejectedAt) {
-      const targetTime = new Date(
-        new Date(botData.lastRejectedAt).getTime() + 12 * 60 * 60 * 1000, //12 hours in seconds,
-      );
-      const newTimeRemaining = targetTime.getTime() - new Date().getTime();
-      if (newTimeRemaining <= 0) {
+    if (botData?.lastRejectedAt && botData?.isActive) {
+      const remaining = calcRemainingHours(botData?.lastRejectedAt, 12);
+      if (remaining <= 0) {
         setTimeRemaining(0);
         return;
       }
-      setTimeRemaining(Math.round(newTimeRemaining / 1000));
+      setTimeRemaining(Math.round(remaining / 1000));
     }
   }, [botData?.lastRejectedAt]);
 
@@ -56,13 +55,11 @@ const BotDetailPage = () => {
     return () => clearInterval(timer); // Cleanup the interval on unmount
   }, []);
 
-  const formatTime = (seconds: number) => {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const secs = seconds % 60;
-    return `${hours.toString().padStart(2, "0")}:${minutes
+  const DisplayCountdown = ({ timeRemaining }: { timeRemaining: number }) => {
+    const time = formatTimestampToObj(timeRemaining);
+    return `${time.hours.toString().padStart(2, "0")}:${time.minutes
       .toString()
-      .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+      .padStart(2, "0")}:${time.secs.toString().padStart(2, "0")}`;
   };
 
   const handleStartChat = async () => {
@@ -86,10 +83,9 @@ const BotDetailPage = () => {
 
     setBuying(false);
   };
-
   return (
     <div>
-      <div className="fixed left-0 right-0 top-0 z-10 grid grid-cols-3 rounded-bl-[1.25rem] border-b border-primary/25 bg-gray-950 py-1">
+      <div className="fixed left-0 right-0 top-0 z-20 grid grid-cols-3 rounded-bl-[1.25rem] border-b border-primary/25 bg-gray-950 py-1">
         <Link href="/">
           <div className="h-16">
             <Image
@@ -109,7 +105,7 @@ const BotDetailPage = () => {
           >
             Vault value
           </div>
-          <CoinAmount amount={botData?.balance} className="text-4xl" />
+          <CoinAmount amount={botData?.poolPrice} className="text-4xl" />
         </div>
         {timeRemaining ? (
           <div className="flex flex-col items-center justify-center">
@@ -124,10 +120,10 @@ const BotDetailPage = () => {
             <div
               className="flex items-center gap-1 text-xl text-red-500"
               style={{
-                fontFamily: "Asul",
+                fontFamily: "Luminari",
               }}
             >
-              {formatTime(timeRemaining)}
+              <DisplayCountdown timeRemaining={timeRemaining} />
             </div>
           </div>
         ) : (
@@ -154,7 +150,11 @@ const BotDetailPage = () => {
           {botData?.hasActiveTicket ? (
             <GameButton onClick={handleStartChat}>Send a message...</GameButton>
           ) : (
-            <GameButton onClick={() => setOpenDialog(true)} disabled={buying}>
+            <GameButton
+              onClick={() => setOpenDialog(true)}
+              disabled={buying}
+              className="text-base"
+            >
               {buying ? (
                 "..."
               ) : (
@@ -163,14 +163,14 @@ const BotDetailPage = () => {
                   <CoinAmount
                     amount={botData?.ticketPrice}
                     normalFont
-                    className="mx-1.5 text-xl text-current"
+                    className="mx-1.5 text-base text-current"
                   />
                   to send a message...
                 </>
               )}
             </GameButton>
           )}
-          <div className="text-center">
+          <div className="text-center text-sm text-[#BEB7B1]">
             80% of your fee goes to the prize pool
           </div>
         </div>

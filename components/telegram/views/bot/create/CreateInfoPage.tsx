@@ -8,6 +8,8 @@ import { useCreateStore } from "@/store/create";
 
 import AvatarCard from "./components/AvatarCard";
 import AvatarPreview from "./components/AvatarPreview";
+import LinearBackground from "@/components/common/LinearBackground";
+import PageHeading from "@/components/common/PageHeading";
 
 const CreateInfoPage = () => {
   const router = useRouter();
@@ -30,30 +32,9 @@ const CreateInfoPage = () => {
 
   return (
     <div className="flex min-h-dvh flex-col overflow-hidden">
-      <div className="mx-auto w-fit pt-8">
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/50"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/50"></div>
-        </div>
-        <div className="relative">
-          <div className="absolute left-0 top-0 flex h-full w-full">
-            <div className="h-full w-full bg-gradient-to-r from-transparent to-yellow-950/50"></div>
-            <div className="h-full w-full bg-gradient-to-l from-transparent to-yellow-950/50"></div>
-          </div>
-          <div
-            className="relative flex items-center justify-center gap-2 p-2 px-20 text-3xl text-primary"
-            style={{
-              fontFamily: "JimNightshade",
-            }}
-          >
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div>CREATE BOT</div>
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/35"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/35"></div>
+      <div className="mx-auto w-full pt-6">
+        <div className="relative flex items-center justify-center">
+          <PageHeading title="create bot" />
         </div>
       </div>
 

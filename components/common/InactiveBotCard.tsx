@@ -10,6 +10,7 @@ const InactiveBotCard = ({
   balance,
   ticketPrice,
   isActive,
+  poolPrice,
 }: IBotCardProps) => {
   return (
     <Link href={`/bot/${id}`}>
@@ -71,7 +72,7 @@ const InactiveBotCard = ({
               <div className="relative z-0 h-[40px] w-full min-w-[72px] items-center justify-center text-xl">
                 <div className="relative pt-2 text-center">
                   <CoinAmount
-                    amount={ticketPrice}
+                    amount={poolPrice}
                     className="justify-center text-[#FFCD29]"
                   />
                 </div>

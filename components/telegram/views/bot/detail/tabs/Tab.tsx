@@ -41,7 +41,7 @@ const Tab = ({
   setTab: (_tab: number) => void;
 }) => {
   return (
-    <div className="relative z-0 flex h-[38px] w-full max-w-72 items-center justify-center text-[#55432E]">
+    <div className="relative z-10 flex h-[38px] w-full max-w-72 items-center justify-center text-[#55432E]">
       <div className="absolute left-[14px] right-[14px] top-0 -z-10 h-full">
         <Image
           src="/assets/tab-center.png"

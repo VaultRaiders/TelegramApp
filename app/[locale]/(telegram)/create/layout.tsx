@@ -10,7 +10,7 @@ const Layout = ({ children }: IChildren) => {
         backgroundPositionX: "center",
       }}
     >
-      <div className="absolute left-1/2 top-0 w-[495px] -translate-x-1/2">
+      <div className="absolute left-1/2 top-0 w-full -translate-x-1/2">
         <Image
           src="/assets/bg-create-top.png"
           alt="create"

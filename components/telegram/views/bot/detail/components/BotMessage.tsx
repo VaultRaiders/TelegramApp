@@ -37,11 +37,11 @@ const BotMessage = ({
     <div key={message.id} className="flex gap-2">
       <BotAvatar src={botAvatar} />
       <div className="space-y-1">
-        <div className="text-xs font-medium text-[#665D4F]">{botName}</div>
+        <div className="text-xs text-[#665D4F]">{botName}</div>
         <BotMessageContentWrapper>
           <MessageContent content={message.text} className="text-white" />
           <div
-            className="text-right text-sm"
+            className="text-right text-xs"
             style={{
               fontFamily: "Luminari",
               color: "#7D7D7D",

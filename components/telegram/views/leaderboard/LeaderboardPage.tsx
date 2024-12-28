@@ -6,6 +6,9 @@ import Image from "next/image";
 
 import CoinAmount from "@/components/common/CoinAmount";
 import { useLeaderboard } from "@/hooks/api/useLeaderboard";
+import LinearBackground from "@/components/common/LinearBackground";
+import Dot from "@/components/common/Dot";
+import PageHeading from "@/components/common/PageHeading";
 
 const Avatar = () => {
   return (
@@ -81,29 +84,8 @@ const LeaderboardPage = () => {
       }}
     >
       <div className="mx-auto w-fit pt-8">
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/50"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/50"></div>
-        </div>
         <div className="relative">
-          <div className="absolute left-0 top-0 flex h-full w-full">
-            <div className="h-full w-full bg-gradient-to-r from-transparent to-yellow-950/50"></div>
-            <div className="h-full w-full bg-gradient-to-l from-transparent to-yellow-950/50"></div>
-          </div>
-          <div
-            className="relative flex items-center justify-center gap-2 p-2 px-20 text-3xl uppercase text-primary"
-            style={{
-              fontFamily: "JimNightshade",
-            }}
-          >
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div>leaderboard</div>
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/35"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/35"></div>
+          <PageHeading title="leaderboard" />
         </div>
       </div>
 
@@ -131,29 +113,8 @@ const LeaderboardPage = () => {
       </div>
 
       <div className="mx-auto w-fit">
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/50"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/50"></div>
-        </div>
         <div className="relative">
-          <div className="absolute left-0 top-0 flex h-full w-full">
-            <div className="h-full w-full bg-gradient-to-r from-transparent to-yellow-950/50"></div>
-            <div className="h-full w-full bg-gradient-to-l from-transparent to-yellow-950/50"></div>
-          </div>
-          <div
-            className="relative flex items-center justify-center gap-2 p-2 px-20 text-3xl uppercase text-primary"
-            style={{
-              fontFamily: "JimNightshade",
-            }}
-          >
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div>Global ranking</div>
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/35"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/35"></div>
+          <PageHeading title="global ranking" />
         </div>
       </div>
 

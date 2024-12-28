@@ -23,7 +23,7 @@ export function TelegramProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     initDataUser;
   }, []);
-
+  console.log("adas");
   if (!didMount) {
     return <div className="root__loading" />;
   }

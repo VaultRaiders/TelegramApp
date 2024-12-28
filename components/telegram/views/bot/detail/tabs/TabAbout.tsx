@@ -37,7 +37,11 @@ const TabAbout = ({ botId }: { botId: string }) => {
     <div className="relative z-0 overflow-hidden text-[#493010]">
       <div className="absolute left-1/2 top-0 -z-10 w-[107%] -translate-x-1/2">
         <Image
-          src="/assets/scroll.png"
+          src={
+            botData?.isActive
+              ? "/assets/scroll.png"
+              : "/assets/history-scroll.png"
+          }
           alt="Chat History"
           fill
           className="!static h-auto w-full object-contain"

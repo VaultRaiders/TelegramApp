@@ -28,7 +28,6 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
       }
     }
   };
-
   useEffect(() => {
     document.addEventListener("scroll", handleScrollEvent);
 
@@ -53,30 +52,31 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
           backgroundBlendMode: "screen",
         }}
       >
-        <div className="w-full"></div>
-        <p style={{ fontFamily: "Luminari" }} className="text-[#CFCFCF]">
-          Winner
-        </p>
+        <>
+          <p style={{ fontFamily: "Luminari" }} className="text-[#CFCFCF]">
+            Winner
+          </p>
 
-        <div
-          className="h-2 w-32"
-          style={{
-            background:
-              "radial-gradient(  50.02% 49.99% at 50.36% 50.05%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 5%, rgba(255, 255, 255, 0.6) 9%, rgba(255, 255, 255, 0.5) 14%, rgba(255, 255, 255, 0.4) 20%, rgba(255, 255, 255, 0.3) 26%, rgba(255, 255, 255, 0.2) 32%, rgba(255, 255, 255, 0.15) 40%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 63%, rgba(255, 255, 255, 0) 100%)",
-          }}
-        ></div>
-        <p
-          style={{
-            fontFamily: "MicroGrotesk",
-          }}
-          className="text-[#BEB7B1]"
-        >
-          {botData?.address}
-        </p>
+          <div
+            className="h-2 w-32"
+            style={{
+              background:
+                "radial-gradient(  50.02% 49.99% at 50.36% 50.05%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 5%, rgba(255, 255, 255, 0.6) 9%, rgba(255, 255, 255, 0.5) 14%, rgba(255, 255, 255, 0.4) 20%, rgba(255, 255, 255, 0.3) 26%, rgba(255, 255, 255, 0.2) 32%, rgba(255, 255, 255, 0.15) 40%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 63%, rgba(255, 255, 255, 0) 100%)",
+            }}
+          ></div>
+          <p
+            style={{
+              fontFamily: "MicroGrotesk",
+            }}
+            className="text-[#BEB7B1]"
+          >
+            {botData?.winnerAddress}
+          </p>
+        </>
       </div>
     );
   };
-  const Footer = () => {
+  const WinnerFooter = () => {
     return (
       <div
         className="fixed bottom-0 left-0 flex h-40 w-full flex-col gap-3 bg-black p-3"
@@ -97,67 +97,92 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
       </div>
     );
   };
+  const Background = () => {
+    return (
+      <div
+        className="absolute"
+        style={{
+          width: "648.6px",
+          height: "365.79px",
+          left: "-79.21px",
+          top: "10px",
+          gap: "0px",
+          opacity: "0px",
+          rotate: "9.82 deg",
+        }}
+      >
+        <Image src="/assets/bg-chat.png" alt="Background Chat" fill />
+      </div>
+    );
+  };
 
   return (
-    <div className="relative z-0 overflow-hidden text-[#493010]">
-      <div className="absolute left-1/2 top-0 -z-10 w-[107%] -translate-x-1/2">
-        <Image
-          src="/assets/scroll.png"
-          alt="Chat History"
-          fill
-          className="!static h-auto w-full object-contain"
-        />
-      </div>
-      <div className="flex h-16 items-center justify-center">
+    <>
+      {/* <Background /> */}
+      <div className="relative z-10 overflow-hidden text-[#493010]">
+        <div className="absolute left-1/2 top-0 -z-10 w-[107%] -translate-x-1/2">
+          <Image
+            src={
+              botData?.isActive
+                ? "/assets/scroll.png"
+                : "/assets/history-scroll.png"
+            }
+            alt="Chat History"
+            fill
+            className="!static h-auto w-full object-contain"
+          />
+        </div>
+        <div className="z-10 flex h-16 items-center justify-center">
+          <div
+            className="text-center text-3xl tracking-wider"
+            style={{
+              fontFamily: "JimNightshade",
+            }}
+          >
+            - {botData?.displayName} -
+          </div>
+        </div>
+        <div className="px-6 py-3 text-center">{botData?.greeting}</div>
+        <div className="h-10 w-full">
+          <Image
+            src="/assets/scroll-line.png"
+            alt="Scroll"
+            fill
+            className="!static h-full w-auto object-contain"
+          />
+        </div>
         <div
-          className="text-center text-3xl"
-          style={{
-            fontFamily: "JimNightshade",
-          }}
-        >
-          - {botData?.displayName} -
-        </div>
-      </div>
-      <div className="px-6 py-3 text-center">{botData?.greeting}</div>
-      <div className="h-10 w-full">
-        <Image
-          src="/assets/scroll-line.png"
-          alt="Scroll"
-          fill
-          className="!static h-full w-auto object-contain"
-        />
-      </div>
-      <div
-        id="chat-scroll"
-        className={cn(
-          "no-scrollbar h-[calc(100dvh-7rem)] overflow-hidden",
-          enableScroll && "overflow-y-auto",
-        )}
-      >
-        <div className="space-y-5 px-6 pb-40">
-          {chatData?.map((message, i) =>
-            message?.senderRole === "bot" ? (
-              <BotMessage
-                key={i}
-                message={message}
-                botAvatar={
-                  botData?.photoUrl
-                    ? `https://storage.googleapis.com/vault-raiders/${botData.photoUrl}`
-                    : "/assets/avatar-bot-1.png"
-                }
-              />
-            ) : (
-              <UserMessage
-                key={i}
-                message={message}
-                isWinnerMessage={botData?.winMessageId == message.id}
-              />
-            ),
+          id="chat-scroll"
+          className={cn(
+            "no-scrollbar h-[calc(100dvh-7rem)] overflow-hidden",
+            enableScroll && "overflow-y-auto",
           )}
+        >
+          <div className="space-y-5 px-6 pb-40">
+            {chatData?.map((message, i) =>
+              message?.senderRole === "bot" ? (
+                <BotMessage
+                  key={i}
+                  message={message}
+                  botAvatar={
+                    botData?.photoUrl
+                      ? `https://storage.googleapis.com/vault-raiders/${botData.photoUrl}`
+                      : "/assets/avatar-bot-1.png"
+                  }
+                />
+              ) : (
+                <UserMessage
+                  key={i}
+                  message={message}
+                  isWinnerMessage={botData?.winMessageId == message.id}
+                />
+              ),
+            )}
+          </div>
         </div>
+        {botData?.isActive == false && <WinnerFooter />}
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 

@@ -88,7 +88,8 @@ interface IBotData {
   lastRejectedAt?: string;
   winMessageId?: string;
   winner?: string;
-  winnerWallet?: string;
+  winnerAddress?: string;
+  poolPrice?: string;
 }
 
 interface IBotCreateData {
