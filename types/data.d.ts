@@ -101,7 +101,7 @@ interface IBotCreateData {
 }
 
 interface IGenerateBotData {
-  idea: string;
+  ideas: string;
 }
 
 interface IGenerateBotAvatar {

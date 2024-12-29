@@ -20,7 +20,17 @@ const CreatePromptPage = () => {
 
   const avatarDescription = generateData.avatarDescription;
 
-  const { data: botAvatar } = useGenerateBotAvatar({ avatarDescription });
+  const {
+    data: botAvatar,
+    isError,
+    isPending,
+  } = useGenerateBotAvatar({
+    avatarDescription,
+  });
+
+  if (isError) {
+    router.push("/create");
+  }
 
   const handleDescriptionInput = (event: { target: any }) => {
     const textarea = event.target;
@@ -57,7 +67,7 @@ const CreatePromptPage = () => {
         </div>
       </div>
 
-      <AvatarPreview />
+      <AvatarPreview loading={isPending} />
 
       <div className="relative z-0 flex-grow pt-8">
         <div className="absolute left-0 right-0 top-0 -z-10">

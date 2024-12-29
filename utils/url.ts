@@ -4,6 +4,6 @@ function isURL(string: string) {
 }
 
 function includeHttps(string: string) {
-  return string.includes("https://");
+  return string?.includes("https://");
 }
 export { isURL, includeHttps };

@@ -71,7 +71,6 @@ const BotCard = ({
   lastRejectedAt,
   isActive,
 }: IBotCardProps) => {
-  console.log("isURL(photoUrl)", isURL(photoUrl), photoUrl);
   return (
     <Link href={`/bot/${id}`}>
       <div

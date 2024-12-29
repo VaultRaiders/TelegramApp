@@ -113,7 +113,7 @@ const CreateInfoPage = () => {
 
     try {
       const res = await generateBotData({
-        idea: introduction,
+        ideas: introduction,
       });
       const data = res.data.data;
       setGenerateData(data);
@@ -139,7 +139,7 @@ const CreateInfoPage = () => {
         </div>
       </div>
 
-      <AvatarPreview />
+      {/* <AvatarPreview loading={false} /> */}
 
       <div className="relative z-0 flex-grow pt-8">
         <div className="absolute left-0 right-0 top-0 -z-10">

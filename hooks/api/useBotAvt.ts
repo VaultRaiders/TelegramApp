@@ -25,5 +25,6 @@ export const useGenerateBotAvatar = ({
 
       return response.data.data || {};
     },
+    staleTime: 0,
   });
 };
