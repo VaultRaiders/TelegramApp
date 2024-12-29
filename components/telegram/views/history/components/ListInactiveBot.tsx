@@ -1,10 +1,10 @@
 "use client";
 
 import InactiveBotCard from "@/components/common/InactiveBotCard";
-import { useInactiveBotList } from "@/hooks/api/useInactiveBotList";
+import { useBotList } from "@/hooks/api/useBotList";
 
 const ListInactiveBot = () => {
-  const { data: bots } = useInactiveBotList({});
+  const { data: bots } = useBotList({ isActive: false });
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       {bots?.map((bot) => (

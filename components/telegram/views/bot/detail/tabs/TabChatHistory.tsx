@@ -9,10 +9,10 @@ import { useBotDetail } from "@/hooks/api/useBotDetail";
 import { cn } from "@/libs/utils";
 import BotMessage from "../components/BotMessage";
 import UserMessage from "../components/UserMessage";
+import { includeHttps, isURL } from "@/utils/url";
 
 const TabChatHistory = ({ botId }: { botId: string }) => {
   const { data: botData } = useBotDetail({ botId });
-
   const { data: chatData } = useBotChatHistory({ botId });
   const [enableScroll, setEnableScroll] = useState<boolean>(false);
 
@@ -120,18 +120,20 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
     <>
       {/* <Background /> */}
       <div className="relative z-10 overflow-hidden text-[#493010]">
-        <div className="absolute left-1/2 top-0 -z-10 w-[107%] -translate-x-1/2">
-          <Image
-            src={
-              botData?.isActive
-                ? "/assets/scroll.png"
-                : "/assets/history-scroll.png"
-            }
-            alt="Chat History"
-            fill
-            className="!static h-auto w-full object-contain"
-          />
-        </div>
+        {botData?.isActive !== undefined && (
+          <div className="absolute left-1/2 top-0 -z-10 w-[107%] -translate-x-1/2">
+            <Image
+              src={
+                !botData?.isActive
+                  ? "/assets/history-scroll.png"
+                  : "/assets/scroll.png"
+              }
+              alt="Chat History"
+              fill
+              className="!static h-auto w-full object-contain"
+            />
+          </div>
+        )}
         <div className="z-10 flex h-16 items-center justify-center">
           <div
             className="text-center text-3xl tracking-wider"
@@ -165,9 +167,9 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
                   key={i}
                   message={message}
                   botAvatar={
-                    botData?.photoUrl
-                      ? `https://storage.googleapis.com/vault-raiders/${botData.photoUrl}`
-                      : "/assets/avatar-bot-1.png"
+                    includeHttps(botData?.photoUrl)
+                      ? botData?.photoUrl
+                      : `https://storage.googleapis.com/vault-raiders/${botData?.photoUrl}`
                   }
                 />
               ) : (

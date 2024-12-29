@@ -16,7 +16,7 @@ export const useMyBotList = ({
     queryKey: ["myBotList", page, pageSize],
     queryFn: async (): Promise<IBotData[]> => {
       const response = await telegramApiClient.get(
-        `/bot?isActive=true&orderBy=balance&sort=desc&page=${page || 1}&createdBy=${createdBy}&limit=${pageSize || BOT_LIST_PAGE_SIZE}`,
+        `/bot?orderBy=balance&sort=desc&page=${page || 1}&createdBy=${createdBy}&limit=${pageSize || BOT_LIST_PAGE_SIZE}`,
       );
       return response.data.data || [];
     },

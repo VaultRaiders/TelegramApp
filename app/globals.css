@@ -92,3 +92,12 @@ progress::-webkit-progress-value {
   font-display: swap;
   src: url("/fonts/MicroGrotesk.ttf");
 }
+
+
+@font-face {
+  font-family: "MicroGrotesk500";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/MicroGrotesk.ttf");
+}

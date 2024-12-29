@@ -6,15 +6,10 @@ import { useCreateStore } from "@/store/create";
 
 const AvatarPreview = () => {
   const { botData } = useCreateStore();
-
   return (
     <div className="relative mx-auto my-4 aspect-[200/270] h-32">
       <Image
-        src={
-          !botData?.photoUrl
-            ? "/assets/bg-bot-create.png"
-            : "/assets/bg-bot-1.png"
-        }
+        src={botData?.photoUrl || "/assets/bg-bot-create.png"}
         alt="Background"
         fill
         className="!static object-contain"

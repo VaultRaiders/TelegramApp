@@ -7,46 +7,53 @@ import { useRouter } from "@/i18n/routing";
 import { useCreateStore } from "@/store/create";
 
 import AvatarPreview from "./components/AvatarPreview";
+import { useGenerateBotDataStore } from "@/store/generate";
+import { useEffect, useRef } from "react";
+import PageHeading from "@/components/common/PageHeading";
+import { useGenerateBotAvatar } from "@/hooks/api/useBotAvt";
 
 const CreatePromptPage = () => {
   const router = useRouter();
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { botData, setBotData } = useCreateStore();
+  const { generateData, setGenerateData } = useGenerateBotDataStore();
+
+  const avatarDescription = generateData.avatarDescription;
+
+  const { data: botAvatar } = useGenerateBotAvatar({ avatarDescription });
+
+  const handleDescriptionInput = (event: { target: any }) => {
+    const textarea = event.target;
+    textarea.style.height = `${textarea.scrollHeight}px`;
+    setBotData({ ...botData, prompt: textarea.value });
+  };
+
+  useEffect(() => {
+    setBotData({ ...botData, photoUrl: botAvatar?.photoUrl });
+  }, [botAvatar]);
+
+  useEffect(() => {
+    if (
+      textareaRef.current instanceof HTMLTextAreaElement &&
+      textareaRef.current
+    ) {
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  }, []);
 
   const handleNext = () => {
     if (!botData?.prompt) {
       alert("Please enter win condition");
       return;
     }
-
     router.push("/create/payment");
   };
 
   return (
     <div className="flex min-h-dvh flex-col overflow-hidden">
       <div className="mx-auto w-fit pt-8">
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/50"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/50"></div>
-        </div>
         <div className="relative">
-          <div className="absolute left-0 top-0 flex h-full w-full">
-            <div className="h-full w-full bg-gradient-to-r from-transparent to-yellow-950/50"></div>
-            <div className="h-full w-full bg-gradient-to-l from-transparent to-yellow-950/50"></div>
-          </div>
-          <div
-            className="relative flex items-center justify-center gap-2 p-2 px-20 text-3xl text-primary"
-            style={{
-              fontFamily: "JimNightshade",
-            }}
-          >
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-            <div>CREATE BOT</div>
-            <div className="h-1 w-1 rounded-full bg-primary"></div>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="h-0.5 w-full bg-gradient-to-r from-transparent to-primary/35"></div>
-          <div className="h-0.5 w-full bg-gradient-to-l from-transparent to-primary/35"></div>
+          <PageHeading title="create bot" />
         </div>
       </div>
 
@@ -71,70 +78,14 @@ const CreatePromptPage = () => {
         >
           <div style={{ fontFamily: "Luminari" }}>Bot and Game Rules</div>
 
-          {/* <div className="space-y-2 rounded-xl bg-[#55432E]/20 p-4">
-            <div className="text-center font-bold">Introduce your bot*</div>
-            <textarea
-              placeholder="|Describe the bot context and how to convince bot."
-              className="w-full bg-transparent placeholder:text-[#665D4F] focus:border-0 focus:outline-none focus:ring-0"
-            />
-            <div className="text-center font-bold">or</div>
-            <div className="mx-auto h-fit w-fit rounded-xl bg-[#686868]/40 p-1">
-              <div
-                className="h-20 w-20 rounded-lg bg-[#665D4F] text-center text-[#FFE0C2]/60"
-                style={{
-                  fontFamily: "JimNightshade",
-                  fontSize: 72,
-                  lineHeight: "5.5rem",
-                }}
-              >
-                ?
-              </div>
-            </div>
-            <div
-              className="text-center text-xl uppercase"
-              style={{
-                fontFamily: "JimNightshade",
-              }}
-            >
-              ✨AI suggestions
-            </div>
-          </div> */}
-
-          <div className="space-y-2 rounded-xl bg-[#55432E]/20 p-4">
-            <div className="text-center font-bold">Main win condition*</div>
-            <textarea
-              onChange={(e) =>
-                setBotData({ ...botData, prompt: e.target.value })
-              }
-              placeholder="|Main win condition should be direct and simple."
-              className="w-full bg-transparent placeholder:text-[#665D4F] focus:border-0 focus:outline-none focus:ring-0"
-            />
-            {/* <div className="text-center font-bold">or</div>
-            <div className="mx-auto h-fit w-fit rounded-xl bg-[#686868]/40 p-1">
-              <div
-                className="h-20 w-20 rounded-lg bg-[#665D4F] text-center text-[#FFE0C2]/60"
-                style={{
-                  fontFamily: "JimNightshade",
-                  fontSize: 72,
-                  lineHeight: "5.5rem",
-                }}
-              >
-                ?
-              </div>
-            </div>
-            <div
-              className="text-center text-xl uppercase"
-              style={{
-                fontFamily: "JimNightshade",
-              }}
-            >
-              ✨AI suggestions
-            </div> */}
-          </div>
-
           <div className="space-y-2 rounded-xl bg-[#55432E]/20 p-4">
             <div className="text-center font-bold">Fallback condition</div>
-            <div>
+            <div
+              style={{
+                fontFamily: "MicroGrotesk",
+              }}
+              className="text-xs"
+            >
               <ul className="list-decimal pl-5">
                 <li>Attacker Wins: Claim the bot&#39;s entire pool!</li>
                 <li>12-Hour Timer: Resets with every new message.</li>
@@ -147,6 +98,25 @@ const CreatePromptPage = () => {
                 </li>
               </ul>
             </div>
+          </div>
+
+          <div className="rounded-xl bg-[#55432E]/20 p-4">
+            <div className="text-center font-bold">System instruction*</div>
+            <p
+              style={{
+                fontFamily: "JimNightshade",
+              }}
+              className="text-xl uppercase"
+            >
+              ✨AI suggestions
+            </p>
+            <textarea
+              ref={textareaRef}
+              onChange={handleDescriptionInput}
+              value={botData.prompt}
+              placeholder="|Main win condition should be direct and simple."
+              className="max-h-[400px] w-[90%] resize-none bg-transparent outline-none placeholder:text-xs placeholder:text-[#665D4F]"
+            />
           </div>
         </div>
       </div>

@@ -2,14 +2,12 @@ import Image from "next/image";
 
 import CoinAmount from "./CoinAmount";
 import Link from "next/link";
+import { includeHttps, isURL } from "@/utils/url";
 
 const InactiveBotCard = ({
   id,
   photoUrl,
   displayName,
-  balance,
-  ticketPrice,
-  isActive,
   poolPrice,
 }: IBotCardProps) => {
   return (
@@ -32,9 +30,9 @@ const InactiveBotCard = ({
         <div className="hue-rorate-[.29] absolute left-1/2 top-[10%] h-[80%] w-[80%] -translate-x-1/2 grayscale sepia-[.3]">
           <Image
             src={
-              photoUrl
-                ? `https://storage.googleapis.com/vault-raiders/${photoUrl}`
-                : "/assets/avatar-bot-1.png"
+              includeHttps(photoUrl)
+                ? photoUrl
+                : `https://storage.googleapis.com/vault-raiders/${photoUrl}`
             }
             alt="Background"
             fill
@@ -72,7 +70,8 @@ const InactiveBotCard = ({
               <div className="relative z-0 h-[40px] w-full min-w-[72px] items-center justify-center text-xl">
                 <div className="relative pt-2 text-center">
                   <CoinAmount
-                    amount={poolPrice}
+                    amount={poolPrice || "0"}
+                    noFormat
                     className="justify-center text-[#FFCD29]"
                   />
                 </div>

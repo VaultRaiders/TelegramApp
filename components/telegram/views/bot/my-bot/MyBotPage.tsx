@@ -8,6 +8,7 @@ import { useMyBotList } from "@/hooks/api/useMyBotList";
 import { Link } from "@/i18n/routing";
 import { useCreateStore } from "@/store/create";
 import PageHeading from "@/components/common/PageHeading";
+import InactiveBotCard from "@/components/common/InactiveBotCard";
 
 const MyBotPage = () => {
   const { setBotData } = useCreateStore();
@@ -85,7 +86,15 @@ const MyBotPage = () => {
           </div>
         </Link>
 
-        {botList?.map((bot) => <BotCard key={bot?.id} {...bot} />)}
+        {botList
+          ?.sort((a, b) => (b.isActive ? 1 : -1))
+          .map((bot) => {
+            return bot.isActive ? (
+              <BotCard key={bot?.id} {...bot} />
+            ) : (
+              <InactiveBotCard key={bot?.id} {...bot} />
+            );
+          })}
       </div>
     </div>
   );

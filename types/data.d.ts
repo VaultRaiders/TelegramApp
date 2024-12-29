@@ -96,8 +96,20 @@ interface IBotCreateData {
   displayName?: string;
   prompt?: string;
   password?: string;
-  photoUrl?: string;
   initPrice?: string;
+  photoUrl?: string;
+}
+
+interface IGenerateBotData {
+  idea: string;
+}
+
+interface IGenerateBotAvatar {
+  photoUrl?: string;
+}
+
+interface IGenerateBotAvt {
+  avatarDescription: string;
 }
 
 interface IBotChatMessageData {

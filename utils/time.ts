@@ -3,9 +3,9 @@ const formatTimestampToObj = (seconds: number) => {
   const minutes = Math.floor((seconds % 3600) / 60);
   const secs = seconds % 60;
   return {
-    hours,
-    minutes,
-    secs,
+    hours: hours < 0 ? "0" : `${hours}`,
+    minutes: minutes < 0 ? "0" : `${minutes}`,
+    secs: secs < 0 ? "0" : `${secs}`,
   };
 };
 

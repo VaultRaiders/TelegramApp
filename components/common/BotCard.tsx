@@ -5,6 +5,7 @@ import { Link } from "@/i18n/routing";
 import CoinAmount from "./CoinAmount";
 import { useEffect, useState } from "react";
 import { calcRemainingHours, formatTimestampToObj } from "@/utils/time";
+import { includeHttps, isURL } from "@/utils/url";
 
 const CountDown = ({ lastRejectedAt }: { lastRejectedAt: string }) => {
   const [timeRemaining, setTimeRemaining] = useState<number>();
@@ -31,7 +32,6 @@ const CountDown = ({ lastRejectedAt }: { lastRejectedAt: string }) => {
     }, 1000);
     return () => clearInterval(timer); // Cleanup the interval on unmount
   }, []);
-
   return (
     <div
       className="flex gap-0.5 text-sm"
@@ -41,21 +41,21 @@ const CountDown = ({ lastRejectedAt }: { lastRejectedAt: string }) => {
     >
       <div className="relative box-border h-6 w-6 p-0.5">
         <p className="relative z-10 h-full w-full text-center text-[#5D3127]">
-          {time.hours < 10 ? "0" + time.hours : time.hours}
+          {time.hours.length < 2 ? "0" + time.hours : time.hours}
         </p>
         <Image src={backgroundPath} fill alt="Countdown" className="absolute" />
       </div>
       {":"}
       <div className="relative h-6 w-6 p-0.5">
         <p className="relative z-10 text-center text-[#5D3127]">
-          {time.minutes < 10 ? "0" + time.minutes : time.minutes}
+          {time.minutes.length < 2 ? "0" + time.minutes : time.minutes}
         </p>
         <Image src={backgroundPath} fill alt="Countdown" className="absolute" />
       </div>
       {":"}
       <div className="relative h-6 w-6 p-0.5">
         <p className="relative z-10 text-center text-[#5D3127]">
-          {time.secs < 10 ? "0" + time.secs : time.secs}
+          {time.secs.length < 2 ? "0" + time.secs : time.secs}
         </p>
         <Image src={backgroundPath} fill alt="Countdown" className="absolute" />
       </div>
@@ -71,21 +71,7 @@ const BotCard = ({
   lastRejectedAt,
   isActive,
 }: IBotCardProps) => {
-  const [timeRemaining, setTimeRemaining] = useState<number>();
-
-  useEffect(() => {
-    if (lastRejectedAt && isActive) {
-      const targetTime = new Date(
-        new Date(lastRejectedAt).getTime() + 12 * 60 * 60 * 1000, //12 hours in seconds,
-      );
-      const newTimeRemaining = targetTime.getTime() - new Date().getTime();
-      if (newTimeRemaining <= 0) {
-        setTimeRemaining(0);
-        return;
-      }
-      setTimeRemaining(Math.round(newTimeRemaining / 1000));
-    }
-  }, [lastRejectedAt]);
+  console.log("isURL(photoUrl)", isURL(photoUrl), photoUrl);
   return (
     <Link href={`/bot/${id}`}>
       <div
@@ -117,9 +103,9 @@ const BotCard = ({
         <div className="absolute left-1/2 top-[10%] w-[80%] -translate-x-1/2">
           <Image
             src={
-              photoUrl
-                ? `https://storage.googleapis.com/vault-raiders/${photoUrl}`
-                : "/assets/avatar-bot-1.png"
+              includeHttps(photoUrl)
+                ? photoUrl
+                : `https://storage.googleapis.com/vault-raiders/${photoUrl}`
             }
             alt="Background"
             fill

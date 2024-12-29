@@ -21,6 +21,14 @@ export interface IBotCreateData {
   initKeys?: number;
 }
 
+export interface IBotGenerate {
+  name?: string;
+  avatarDescription?: string;
+  backStory?: string;
+  systemInstruction?: string;
+  photoUrl?: string;
+}
+
 interface IBotStore {
   botCreateData: IBotCreateData;
   setBotCreateData: (_data: IBotCreateData) => void;
