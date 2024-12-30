@@ -1,22 +1,21 @@
 "use client";
 
+import { useState } from "react";
+
 import Image from "next/image";
 
+import PageHeading from "@/components/common/PageHeading";
 import { GameButton } from "@/components/core/button";
+import { useGenerateBotData } from "@/hooks/api/useGenerateBotData";
 import { useRouter } from "@/i18n/routing";
 import { useCreateStore } from "@/store/create";
 import { useGenerateBotDataStore } from "@/store/generate";
-
-import AvatarPreview from "./components/AvatarPreview";
-import PageHeading from "@/components/common/PageHeading";
-import { useState } from "react";
-import { useGenerateBotData } from "@/hooks/api/useGenerateBotData";
 
 const BotDescription = ({
   handleInput,
   value,
 }: {
-  handleInput: (event: { target: any }) => void;
+  handleInput: (_event: { target: any }) => void;
   value: string;
 }) => {
   // Adjust height based on content
@@ -63,11 +62,12 @@ const BotDescription = ({
     </div>
   );
 };
+
 const CreateInfoPage = () => {
   const router = useRouter();
 
   const { botData, setBotData } = useCreateStore();
-  const { generateData, setGenerateData } = useGenerateBotDataStore();
+  const { setGenerateData } = useGenerateBotDataStore();
   const [introduction, setIntroduction] = useState();
 
   const handleDescriptionInput = (event: { target: any }) => {
@@ -107,7 +107,7 @@ const CreateInfoPage = () => {
 
   return (
     <div className="flex min-h-dvh flex-col overflow-hidden">
-      <div className="mx-auto w-full pt-6">
+      <div className="mx-auto w-full pb-4 pt-6">
         <div className="relative flex items-center justify-center">
           <PageHeading title="create bot" />
         </div>

@@ -1,23 +1,24 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 import Image from "next/image";
 
+import FallbackCondition from "@/components/common/FallbackCondition";
+import PageHeading from "@/components/common/PageHeading";
 import { GameButton } from "@/components/core/button";
+import { useGenerateBotAvatar } from "@/hooks/api/useBotAvt";
 import { useRouter } from "@/i18n/routing";
 import { useCreateStore } from "@/store/create";
+import { useGenerateBotDataStore } from "@/store/generate";
 
 import AvatarPreview from "./components/AvatarPreview";
-import { useGenerateBotDataStore } from "@/store/generate";
-import { useEffect, useRef } from "react";
-import PageHeading from "@/components/common/PageHeading";
-import { useGenerateBotAvatar } from "@/hooks/api/useBotAvt";
-import FallbackCondition from "@/components/common/FallbackCondition";
 
 const CreatePromptPage = () => {
   const router = useRouter();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { botData, setBotData } = useCreateStore();
-  const { generateData, setGenerateData } = useGenerateBotDataStore();
+  const { generateData } = useGenerateBotDataStore();
 
   const avatarDescription = generateData.avatarDescription;
 

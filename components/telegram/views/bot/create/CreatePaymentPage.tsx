@@ -42,7 +42,7 @@ const CreatePaymentPage = () => {
     });
 
     if (message === "success") {
-      router.push("/my-bot");
+      router.push("/?tab=3");
     } else {
       alert("Failed to create bot");
     }
