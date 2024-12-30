@@ -91,7 +91,7 @@ const LeaderboardPage = () => {
 
       <div className="grid grid-cols-2 gap-3 px-6 pb-6 pt-10">
         <LeaderboardCard
-          amount={`${leaderboardData?.metadata?.totalParticipants}`}
+          amount={`${leaderboardData?.metadata?.totalParticipant}`}
           title="Total Participants"
           iconUrl="/assets/nav-3.png"
         />

@@ -8,7 +8,7 @@ import Loader from "@/components/common/loading/ApiLoading";
 const AvatarPreview = ({ loading }: { loading?: boolean }) => {
   const { botData } = useCreateStore();
   return (
-    <div className="relative mx-auto my-4 aspect-[200/270] h-32 bg-white">
+    <div className="relative mx-auto my-4 aspect-[200/270] h-52">
       {!botData?.photoUrl && loading ? (
         <>
           <Image

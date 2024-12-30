@@ -6,7 +6,7 @@ import telegramApiClient from "@/libs/api-telegram";
 export const useBotList = ({
   page,
   pageSize,
-  isActive,
+  isActive = true,
 }: {
   page?: number;
   pageSize?: number;

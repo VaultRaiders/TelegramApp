@@ -59,29 +59,6 @@ const BotDescription = ({
             value={value}
           />
         </div>
-        <p
-          style={{
-            fontFamily: "MicroGrotesk500",
-          }}
-        >
-          or
-        </p>
-        <div className="flex flex-col items-center justify-center gap-2">
-          <Image
-            src="/assets/ai-describe-suggestion.png"
-            width={80}
-            height={80}
-            alt="AI Suggestion"
-          />
-          <p
-            className="uppercase"
-            style={{
-              fontFamily: "JimNightshade",
-            }}
-          >
-            ✨AI suggestions
-          </p>
-        </div>
       </div>
     </div>
   );
@@ -102,10 +79,6 @@ const CreateInfoPage = () => {
 
   const { mutateAsync: generateBotData } = useGenerateBotData();
   const handleNext = async () => {
-    if (!botData?.displayName) {
-      alert("Please enter bot name");
-      return;
-    }
     if (!introduction) {
       alert("Please enter bot introduction");
       return;
@@ -122,6 +95,7 @@ const CreateInfoPage = () => {
         photoUrl: data.photoUrl,
         prompt: data.systemInstruction,
         bio: data.backStory,
+        displayName: data.name,
       });
     } catch (error) {
       console.log(error);
@@ -159,23 +133,6 @@ const CreateInfoPage = () => {
             fontFamily: "Luminari",
           }}
         >
-          <div>
-            <div>Bot Name</div>
-            <input
-              type="text"
-              placeholder="Enter bot name"
-              value={botData?.displayName}
-              onChange={(e) =>
-                setBotData({ ...botData, displayName: e.target.value })
-              }
-              autoComplete="off"
-              className="w-full bg-transparent text-center text-3xl uppercase focus:border-0 focus:outline-none focus:ring-0"
-              style={{
-                fontFamily: "JimNightshade",
-              }}
-            />
-          </div>
-          <div className="m-0 p-0">---</div>
           <div className="px-3">
             <BotDescription
               handleInput={handleDescriptionInput}

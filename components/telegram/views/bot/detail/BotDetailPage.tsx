@@ -105,7 +105,7 @@ const BotDetailPage = () => {
           >
             Vault value
           </div>
-          <CoinAmount amount={botData?.poolPrice} className="text-4xl" />
+          <CoinAmount amount={botData?.balance} className="text-4xl" />
         </div>
         {timeRemaining ? (
           <div className="flex flex-col items-center justify-center">

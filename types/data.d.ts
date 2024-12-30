@@ -54,7 +54,7 @@ interface ILeaderboardData {
     updatedAt?: string;
   }[];
   metadata?: {
-    totalParticipants?: number;
+    totalParticipant?: number;
     totalPrizeEarned?: string;
     totalPlays?: number;
     totalWin?: number;

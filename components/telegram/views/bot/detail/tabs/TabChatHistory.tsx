@@ -15,7 +15,6 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
   const { data: botData } = useBotDetail({ botId });
   const { data: chatData } = useBotChatHistory({ botId });
   const [enableScroll, setEnableScroll] = useState<boolean>(false);
-
   const handleScrollEvent = () => {
     const chatScroll = document.getElementById("chat-scroll");
     if (chatScroll) {
@@ -76,7 +75,7 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
       </div>
     );
   };
-  const WinnerFooter = () => {
+  const WinnerFooter = ({ botName }: { botName: string }) => {
     return (
       <div
         className="fixed bottom-0 left-0 flex h-40 w-full flex-col gap-3 bg-black p-3"
@@ -90,8 +89,8 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
           }}
           className="text-center text-sm font-[200] text-white"
         >
-          Lysandra is grateful for the brave humans who engaged. We will meet
-          again.
+          {botName || "This character"} is grateful for the brave humans who
+          engaged. We will meet again.
         </p>
         <WinnerCard />
       </div>
@@ -144,7 +143,7 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
             - {botData?.displayName} -
           </div>
         </div>
-        <div className="px-6 py-3 text-center">{botData?.greeting}</div>
+        <div className="px-6 py-3 text-center">{botData?.bio}</div>
         <div className="h-10 w-full">
           <Image
             src="/assets/scroll-line.png"
@@ -182,7 +181,9 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
             )}
           </div>
         </div>
-        {botData?.isActive == false && <WinnerFooter />}
+        {botData?.isActive == false && (
+          <WinnerFooter botName={botData.displayName} />
+        )}
       </div>
     </>
   );

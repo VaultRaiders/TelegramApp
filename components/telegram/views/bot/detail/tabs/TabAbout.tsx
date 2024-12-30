@@ -6,6 +6,8 @@ import Image from "next/image";
 
 import { useBotDetail } from "@/hooks/api/useBotDetail";
 import { cn } from "@/libs/utils";
+import CoinAmount from "@/components/common/CoinAmount";
+import FallbackCondition from "@/components/common/FallbackCondition";
 
 const TabAbout = ({ botId }: { botId: string }) => {
   const { data: botData } = useBotDetail({ botId });
@@ -103,13 +105,12 @@ const TabAbout = ({ botId }: { botId: string }) => {
           >
             Message Price
           </div>
-          <div
-            className="text-xl"
-            style={{
-              fontFamily: "Asul",
-            }}
-          >
-            {botData?.ticketCount || 0}
+          <div className="flex items-center justify-center">
+            <CoinAmount
+              amount={botData?.ticketPrice || "0"}
+              showCoin
+              className="text-center text-[#5D6576]"
+            />
           </div>
         </div>
       </div>
@@ -129,10 +130,10 @@ const TabAbout = ({ botId }: { botId: string }) => {
         )}
       >
         <div className="space-y-3 px-6 py-2">
-          <div className="rounded-xl bg-[#65533F]/20 p-4">{botData?.bio}</div>
-          <div className="rounded-xl bg-[#65533F]/20 p-4">
-            {botData?.greeting}
-          </div>
+          {botData?.bio && (
+            <div className="rounded-xl bg-[#65533F]/20 p-4">{botData?.bio}</div>
+          )}
+          <FallbackCondition />
         </div>
       </div>
     </div>

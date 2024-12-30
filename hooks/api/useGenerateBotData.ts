@@ -4,12 +4,15 @@ import { initDataRaw } from "@telegram-apps/sdk-react";
 import telegramApiClient from "@/libs/api-telegram";
 import { AxiosResponse } from "axios";
 import { useLoadingStore } from "@/store/loading";
+import { IBotGenerate } from "@/store/bot";
 
 export const useGenerateBotData = () => {
   const setLoading = useLoadingStore((state: any) => state.toggleLoading);
   const mutation = useMutation({
     mutationKey: ["generateBotData"],
-    mutationFn: async (payload: IGenerateBotData): Promise<AxiosResponse> => {
+    mutationFn: async (
+      payload: IGenerateBotData,
+    ): Promise<AxiosResponse<{ data: IBotGenerate }>> => {
       try {
         const data = await telegramApiClient.post(
           `/bot/generate-bot-data`,

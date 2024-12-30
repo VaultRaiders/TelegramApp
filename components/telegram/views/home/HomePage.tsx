@@ -10,6 +10,7 @@ import { beautifulNumber } from "@/libs/utils";
 
 import ListBot from "./components/ListBot";
 import LinearBackground from "@/components/common/LinearBackground";
+import { useBotList } from "@/hooks/api/useBotList";
 
 const LeftHeader = ({
   username,
@@ -88,7 +89,10 @@ const HomePage = () => {
   const user = useLaunchParams()?.initData?.user;
   const { data: walletData } = useUserWallet();
   const { data: gameStats } = useGameStats();
-
+  const { data: botList } = useBotList({});
+  const totalPrice = botList.reduce((prev, curr) => {
+    return prev + +curr.balance;
+  }, 0);
   return (
     <div
       className="min-h-dvh px-3 pb-24"
@@ -113,7 +117,7 @@ const HomePage = () => {
             }}
           >
             <div>
-              <p>Total bots: {beautifulNumber(gameStats?.totalBots)}</p>
+              <p>Total bots: {beautifulNumber(botList?.length)}</p>
             </div>
             <div className="h-0.5 w-0.5 rounded-full bg-primary"></div>
             <div>
@@ -123,9 +127,7 @@ const HomePage = () => {
             <div className="flex items-center gap-1 text-sm">
               <p>Prize total: </p>
               <CoinAmount
-                amount={(
-                  +(gameStats?.totalPrice || 0) * Math.pow(10, 18)
-                ).toString()}
+                amount={(+(+totalPrice || 0)).toString()}
                 normalFont
                 className="pb-0 text-base text-current"
               />

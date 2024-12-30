@@ -11,6 +11,7 @@ import { useGenerateBotDataStore } from "@/store/generate";
 import { useEffect, useRef } from "react";
 import PageHeading from "@/components/common/PageHeading";
 import { useGenerateBotAvatar } from "@/hooks/api/useBotAvt";
+import FallbackCondition from "@/components/common/FallbackCondition";
 
 const CreatePromptPage = () => {
   const router = useRouter();
@@ -56,6 +57,10 @@ const CreatePromptPage = () => {
       alert("Please enter win condition");
       return;
     }
+    if (!botData.photoUrl) {
+      alert("Please wait for image generation");
+      return;
+    }
     router.push("/create/payment");
   };
 
@@ -88,27 +93,7 @@ const CreatePromptPage = () => {
         >
           <div style={{ fontFamily: "Luminari" }}>Bot and Game Rules</div>
 
-          <div className="space-y-2 rounded-xl bg-[#55432E]/20 p-4">
-            <div className="text-center font-bold">Fallback condition</div>
-            <div
-              style={{
-                fontFamily: "MicroGrotesk",
-              }}
-              className="text-xs"
-            >
-              <ul className="list-decimal pl-5">
-                <li>Attacker Wins: Claim the bot&#39;s entire pool!</li>
-                <li>12-Hour Timer: Resets with every new message.</li>
-                <li>Timer Runs Out:</li>
-                <li className="list-none pl-5">
-                  <ul className="list-disc">
-                    <li>Last message sender gets 20%.</li>
-                    <li>80% is shared among all players.</li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <FallbackCondition />
 
           <div className="rounded-xl bg-[#55432E]/20 p-4">
             <div className="text-center font-bold">System instruction*</div>
@@ -116,7 +101,7 @@ const CreatePromptPage = () => {
               style={{
                 fontFamily: "JimNightshade",
               }}
-              className="text-xl uppercase"
+              className="text-base uppercase"
             >
               ✨AI suggestions
             </p>
