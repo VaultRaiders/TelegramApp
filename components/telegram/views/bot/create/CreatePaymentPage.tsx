@@ -7,6 +7,7 @@ import Image from "next/image";
 import CoinAmount from "@/components/common/CoinAmount";
 import DialogPassword from "@/components/common/DialogPassword";
 import { GameButton } from "@/components/core/button";
+import { Slider } from "@/components/core/slider";
 import { useBotCreate } from "@/hooks/api/useBotCreate";
 import { useUserWallet } from "@/hooks/api/useUserWallet";
 import { useRouter } from "@/i18n/routing";
@@ -140,7 +141,16 @@ const CreatePaymentPage = () => {
               </div>
               <div className="text-sm text-[#665D4F]">Tokens Added to Pool</div>
               <div className="mt-2">
-                <input
+                <Slider
+                  min={0}
+                  max={Math.floor(
+                    +(walletData?.balance || 0) / 10000000000000000,
+                  )}
+                  value={[price]}
+                  onValueChange={(value) => setPrice(value[0])}
+                  className="relative flex w-full touch-none select-none items-center"
+                />
+                {/* <input
                   type="range"
                   min={0}
                   max={Math.floor(
@@ -149,7 +159,7 @@ const CreatePaymentPage = () => {
                   value={price}
                   onChange={(e) => setPrice(+e.target.value)}
                   className="range range-xs [--range-shdw:#67451D]"
-                />
+                /> */}
               </div>
             </div>
 

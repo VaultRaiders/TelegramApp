@@ -1,11 +1,12 @@
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
 
 import { Link } from "@/i18n/routing";
+import { calcRemainingHours, formatTimestampToObj } from "@/utils/time";
+import { includeHttps } from "@/utils/url";
 
 import CoinAmount from "./CoinAmount";
-import { useEffect, useState } from "react";
-import { calcRemainingHours, formatTimestampToObj } from "@/utils/time";
-import { includeHttps, isURL } from "@/utils/url";
 
 const CountDown = ({ lastRejectedAt }: { lastRejectedAt: string }) => {
   const [timeRemaining, setTimeRemaining] = useState<number>();
@@ -69,7 +70,7 @@ const BotCard = ({
   balance,
   ticketPrice,
   lastRejectedAt,
-  isActive,
+  // isActive,
 }: IBotCardProps) => {
   return (
     <Link href={`/bot/${id}`}>
@@ -84,7 +85,7 @@ const BotCard = ({
       >
         {/* Card countdown */}
         {lastRejectedAt && (
-          <div className="absolute right-3 top-0 z-20">
+          <div className="absolute right-3 top-2 z-20">
             <CountDown lastRejectedAt={lastRejectedAt} />
           </div>
         )}
