@@ -94,6 +94,7 @@ interface IBotData {
 
 interface IBotCreateData {
   displayName?: string;
+  bio?: string;
   prompt?: string;
   password?: string;
   initPrice?: string;

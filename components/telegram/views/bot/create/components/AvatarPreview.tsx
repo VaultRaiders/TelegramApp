@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 
-import { useCreateStore } from "@/store/create";
 import Loader from "@/components/common/loading/ApiLoading";
+import { useCreateStore } from "@/store/create";
 
 const AvatarPreview = ({ loading }: { loading?: boolean }) => {
   const { botData } = useCreateStore();
+
   return (
     <div className="relative mx-auto my-4 aspect-[200/270] h-52">
       {!botData?.photoUrl && loading ? (
