@@ -6,6 +6,8 @@ import Image from "next/image";
 
 import PageHeading from "@/components/common/PageHeading";
 import { GameButton } from "@/components/core/button";
+import { Label } from "@/components/core/label";
+import { RadioGroup, RadioGroupItem } from "@/components/core/radio";
 import { Slider } from "@/components/core/slider";
 import { useGenerateBotData } from "@/hooks/api/useGenerateBotData";
 import { useRouter } from "@/i18n/routing";
@@ -180,6 +182,102 @@ const CreateInfoPage = () => {
             />
 
             <div className="space-y-4">
+              <div>
+                <div className="flex items-end justify-between">
+                  <div style={{ fontFamily: "Luminari" }}>
+                    Behavior Configs:
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <div className="font-bold">Sociability</div>
+                </div>
+
+                <div className="flex justify-between">
+                  <div>Silent</div>
+                  <div>Talkative</div>
+                </div>
+
+                <Slider min={0} max={100} step={1} defaultValue={[50]} />
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <div className="font-bold">Vocabulary Complexity</div>
+                </div>
+
+                <div className="flex justify-between">
+                  <div>Simple</div>
+                  <div>Sophisticated</div>
+                </div>
+
+                <Slider min={0} max={100} step={1} defaultValue={[50]} />
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <div className="flex items-end justify-between">
+                  <div style={{ fontFamily: "Luminari" }}>Visual Configs:</div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <div className="font-bold">Alignment</div>
+                  </div>
+
+                  <RadioGroup defaultValue="light">
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="light" id="r1" />
+                      <Label htmlFor="r1">Light</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="neutral" id="r2" />
+                      <Label htmlFor="r2">Neutral</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="dark" id="r3" />
+                      <Label htmlFor="r3">Dark</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <div className="font-bold">Bot Form</div>
+                  </div>
+
+                  <RadioGroup defaultValue="Humanoid">
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="Humanoid" id="r1" />
+                      <Label htmlFor="r1">Humanoid</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="Beast" id="r2" />
+                      <Label htmlFor="r2">Beast</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="Spirit" id="r3" />
+                      <Label htmlFor="r3">Spirit</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="Construct" id="r2" />
+                      <Label htmlFor="r2">Construct</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="Artifact" id="r3" />
+                      <Label htmlFor="r3">Artifact</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+              </div>
+            </div>
+
+            {/* <div className="space-y-4">
               <div>
                 <div className="flex items-end justify-between">
                   <div style={{ fontFamily: "Luminari" }}>Reply Style</div>
@@ -373,7 +471,7 @@ const CreateInfoPage = () => {
                   }}
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

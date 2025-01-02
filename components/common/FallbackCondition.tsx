@@ -9,8 +9,8 @@ const FallbackCondition = () => {
           <li>Timer Runs Out:</li>
           <li className="list-none pl-5">
             <ul className="list-disc">
-              <li>Last message sender gets 20%.</li>
-              <li>80% is shared among all players.</li>
+              <li>75% ticket cost refund to attacker.</li>
+              <li>Last sender gets 15% of the pool + ticket cost.</li>
             </ul>
           </li>
         </ul>
