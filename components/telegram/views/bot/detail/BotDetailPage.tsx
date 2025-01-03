@@ -12,11 +12,11 @@ import { useBotBuyTicket } from "@/hooks/api/useBotBuyTicket";
 import { useBotDetail } from "@/hooks/api/useBotDetail";
 import { useBotStart } from "@/hooks/api/useBotStart";
 import { Link, useParams } from "@/i18n/routing";
+import { calcRemainingHours, formatTimestampToObj } from "@/utils/time";
 
 import Tab from "./tabs/Tab";
 import TabAbout from "./tabs/TabAbout";
 import TabChatHistory from "./tabs/TabChatHistory";
-import { calcRemainingHours, formatTimestampToObj } from "@/utils/time";
 
 const BotDetailPage = () => {
   const params = useParams();
@@ -171,7 +171,7 @@ const BotDetailPage = () => {
             </GameButton>
           )}
           <div className="text-center text-sm text-[#BEB7B1]">
-            80% of your fee goes to the prize pool
+            70% of your fee goes to the prize pool
           </div>
         </div>
       ) : (
