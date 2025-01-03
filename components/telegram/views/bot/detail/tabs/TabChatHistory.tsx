@@ -143,7 +143,9 @@ const TabChatHistory = ({ botId }: { botId: string }) => {
             - {botData?.displayName} -
           </div>
         </div>
-        <div className="px-6 py-3 text-center">{botData?.bio}</div>
+        <div className="px-6 py-3 text-center">
+          {botData?.additionalInstructions}
+        </div>
         <div className="h-10 w-full">
           <Image
             src="/assets/scroll-line.png"
